@@ -1070,6 +1070,7 @@ pre .javascript .function {
   color: #fff;
   cursor: pointer;
   text-align: center;
+  transform: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-transform: translateZ(0);
   transition-property: bottom;
   transition-duration: 0.2s;
@@ -1112,8 +1113,8 @@ pre .javascript .function {
   position: relative;
   display: inline-block;
   padding: 0 40px;
-  color: #fff;
-  background: #222;
+  color: rgb(255, 255, 255);
+  background: rgb(4, 4, 4);
   border-bottom: none;
 }
 .brand:hover {
@@ -1668,6 +1669,7 @@ pre .javascript .function {
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
   background: #222;
+  transform: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
@@ -1711,6 +1713,7 @@ pre .javascript .function {
   line-height: 0;
   z-index: 1050;
   cursor: pointer;
+  transform: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-transform: translateZ(0);
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1962,7 +1965,7 @@ pre .javascript .function {
   display: inline-block;
   margin: 0 5px;
 }
-.powered-by,
+.Reference,
 .theme-info {
   display: inline-block;
 }
@@ -2319,7 +2322,7 @@ pre .javascript .function {
   outline: none;
   border: none;
   background: transparent;
-  vertical-align: middle;
+  background-position: center
 }
 .local-search-popup .search-icon,
 .local-search-popup .popup-btn-close {
@@ -2847,6 +2850,7 @@ pre .javascript .function {
   margin-left: -100%;
   right: auto;
   bottom: auto;
+  transform: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-transform: none;
 }
 .sidebar-inner {
@@ -3146,11 +3150,12 @@ pre {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 3px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 body {
-  background: url("/HTML/images/917853.jpg");
+  background: url("https://98tzuting.github.io/project/HTML/images/917853.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
