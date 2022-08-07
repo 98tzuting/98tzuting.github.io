@@ -34,7 +34,7 @@
   <link rel="canonical" href="https://98tzuting.github.io/project/HTML/">
   <!-- loading 動畫 -->
   <script src="/HTML/lib/pace/pace.min.js?v=1.0.2"></script>
-  <!-- 左邊資訊欄 還沒理解 -->
+  <!-- 左邊資訊欄 會跟著動 -->
   <script type="text/javascript" id="hexo.configurations">
     var NexT = window.NexT || {};
     var CONFIG = {
@@ -58,23 +58,28 @@
       }
     };
   </script>
+  <!-- 無JS插件時的錯誤訊息 -->
   <noscript>
     <p>此網頁需要支援 JavaScript 才能正確運行，請先至你的瀏覽器設定中開啟 JavaScript。</p>
   </noscript>
   <!-- 設定所有相對路徑的根 URL(會改變之後位置 未設定完全) -->
-  <!-- <base href="https://98tzuting.github.io/"> -->
+  <base href="https://98tzuting.github.io/project/">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-  <div class="bg_content">
-  <canvas id="galaxy"></canvas>
-</div>
-<a href="https://github.com/SamiOuOb" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- 版面位置 -->
+  <div class="container sidebar-position-left page-home">
+  <div class="headband"></div>
+  <div class="bg_content"><canvas id="galaxy"></canvas></div>
+  <!-- GitHub Corners (73-77) -->
+  <a href="https://github.com/98tzuting" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewbox="0 0 250 250" style="fill:#030303; color:rgb(255, 255, 255); position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="header-inner">
+  <div class="site-brand-wrapper">
   <div class="site-meta ">
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
@@ -135,7 +140,7 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2019/06/17/WSL2/" itemprop="url">[WSL] 將 WSL 升級成 WSL2 吧 !</a></h1>
+                <a class="post-title-link" href="2019/06/17/WSL2/" itemprop="url">[WSL] 將 WSL 升級成 WSL2 吧 !</a></h1>
        <div class="post-meta">
           <span class="post-time">
               <span class="post-meta-item-icon">
@@ -327,28 +332,30 @@
         <i class="fa fa-arrow-up"></i>
       </div>
   </div>
+
 <script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
 </script>
-      <script type="text/javascript" src="/HTML/lib/jquery/index.js?v=2.1.3"></script>
-      <script type="text/javascript" src="/HTML/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-      <script type="text/javascript" src="/HTML/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-      <script type="text/javascript" src="/HTML/lib/velocity/velocity.min.js?v=1.2.1"></script>
-      <script type="text/javascript" src="/HTML/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-      <script type="text/javascript" src="/HTML/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script type="text/javascript" src="/HTML/js/src/utils.js?v=5.1.4"></script>
-    <script type="text/javascript" src="/HTML/js/src/motion.js?v=5.1.4"></script>
-    <script type="text/javascript" src="/HTML/js/src/affix.js?v=5.1.4"></script>
-    <script type="text/javascript" src="/HTML/js/src/schemes/pisces.js?v=5.1.4"></script>
-    <script type="text/javascript" src="/HTML/js/src/bootstrap.js?v=5.1.4"></script>
-  <script src="/HTML/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05">
+      <script type="text/javascript" src="HTML/lib/jquery/index.js?v=2.1.3"></script>
+      <script type="text/javascript" src="HTML/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+      <script type="text/javascript" src="HTML/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+      <script type="text/javascript" src="HTML/lib/velocity/velocity.min.js?v=1.2.1"></script>
+      <script type="text/javascript" src="HTML/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+      <script type="text/javascript" src="HTML/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="HTML/js/src/utils.js?v=5.1.4"></script>
+    <script type="text/javascript" src="HTML/js/src/motion.js?v=5.1.4"></script>
+    <script type="text/javascript" src="HTML/js/src/affix.js?v=5.1.4"></script>
+    <script type="text/javascript" src="HTML/js/src/schemes/pisces.js?v=5.1.4"></script>
+    <script type="text/javascript" src="HTML/js/src/bootstrap.js?v=5.1.4"></script>
+  <script src="HTML/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05">
     </script>
     <script>
-    L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});
+    L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2dw/assets/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});
     </script>
     </body>
-  <script type="text/javascript" src="/HTML/js/src/dynamic_bg.js">
+    
+  <script type="text/javascript" src="HTML/js/src/dynamic_bg.js">
 </script>
 </html>
