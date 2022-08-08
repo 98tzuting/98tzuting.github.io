@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <base href="https://98tzuting.github.io/project/HTML/">
+  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <!-- <base href="/HTML/"> -->
+  <base href="/HTML/">
 <head>
   <title>tzuting-學習筆記</title>
   <!-- 描述HTML文件的元資訊 -->
@@ -25,8 +25,8 @@
   <meta property="og:url" content="https://98tzuting.github.io/project/main.html">
   <meta property="og:description" content="足夠努力，才能毫不費力">
   <!-- 載入外部 CSS 樣式表 (stylesheet) -->
-  <link href="lib/pace/pace-theme-loading-bar.min.css" rel="stylesheet">
-  <link href="lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
+  <!-- <link href="lib/pace/pace-theme-loading-bar.min.css" rel="stylesheet"> -->
+  <!-- <link href="lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"> -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
   <!-- apple-touch-icon 用來設定蘋果 (Apple) iOS Safari 將網頁 -->
@@ -135,7 +135,7 @@
         <div class="content-wrap">
           <div id="content" class="content">
   <section id="posts" class="posts-expand">
-    <!-- 第一篇 文章 -->
+  <!-- 第一篇 文章 -->
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
@@ -149,25 +149,25 @@
     </span>
       <header class="post-header">
           <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">[WSL] 將 WSL 升級成 WSL2 吧 !</a></h1>
+                <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
        <div class="post-meta">
           <span class="post-time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
                 <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-07T06:22:42+08:00">
-                2022-08-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
+                2022-08-10
               </time>
           </span>
         </div>
       </header>
+      <!-- 內文 -->
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://i.imgur.com/x2wHvFu.png" alt="LOGO"><br>Windows Subsystem for Linux 在 18917版中<br>堂堂迎來了巨大的變革 －－<strong>Windows Subsystem for Linux 2</strong> !!<br>……<br>你是想問為什麼只有加了個2嗎? 我也想問XD<br>不過雖然只加了一個2<br>這背後的改變可說是<strong>驚天地、泣鬼神</strong><br>在18917的發布文獻中<br>微軟提到WSL2是這樣說的：</p>
-<blockquote>
-<p>WSL 2 delivers a much faster file system performance and full system call compatibility, which lets you run more applications like Docker!</p>
-</blockquote>
-<p>也就是說 1代WSL為人詬病的<strong>IO讀取速度</strong> 終於得到了改善<br>
+          <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+             <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
+              <strong>不會過繁瑣的解釋，能了解使用即可</strong>
           <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
     </p></div>
     <footer class="post-footer">
@@ -175,96 +175,170 @@
     </footer>
   </div>
   </article>
-<!-- 第二篇 文章 -->
+  <!-- 第二篇 文章 -->
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="2019/05/31/Volumio/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sami">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://scontent.fkhh1-1.fna.fbcdn.net/v/t1.0-9/34017471_1884281794925404_4375461588786741248_n.jpg?_nc_cat=101&_nc_ht=scontent.fkhh1-1.fna&oh=115ceeb3c2829d4899badcd5070ff232&oe=5D769ADE">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tzuting-學習筆記">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2019/05/31/Volumio/" itemprop="url">[樹莓派 Raspberry Pi] 用 樹莓派 + volumio 製作HIFI播放器吧!</a></h1>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Tzuting">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="basis">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tzuting-學習筆記">
+      </span>
+        <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
         <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-31T21:06:07+08:00">
-                2019-05-31
-              </time>
-          </span>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://mash.in.th/wp-content/uploads/2018/04/volumio-logo.png" alt="LOGO"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前提到，我從去德國交換的學長手中接下了數台樹莓派，<br>不過暫時沒有需要用到他們的地方，<br>後來想想與其放在那邊生灰塵，<br>不如拿來組個<strong>PiFi DAC</strong>來推我的耳罩看看(?</p>
-<p>其實我本來就是個喜歡玩耳機的肥宅，<br>不過手邊只有一個便宜耳擴，<br>卻沒有堪用的DAP，<br><strong>這 怎 麼 能 忍 呢 !</strong><br>所以我就決定動手做了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="2019/05/31/Volumio/#more" rel="contents">
-              Read more &raquo;
-            </a>
+            <span class="post-time">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-o"></i>
+                </span>
+                  <span class="post-meta-item-text">Posted on</span>
+                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
+                  2022-08-10
+                </time>
+            </span>
           </div>
-          <!--/noindex-->
-    </p></div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  </article>
-<!-- 第三篇 文章 -->
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="2019/05/31/Pi_Wifi/">
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sami">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://scontent.fkhh1-1.fna.fbcdn.net/v/t1.0-9/34017471_1884281794925404_4375461588786741248_n.jpg?_nc_cat=101&_nc_ht=scontent.fkhh1-1.fna&oh=115ceeb3c2829d4899badcd5070ff232&oe=5D769ADE">
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tzuting-學習筆記">
-    </span>
-      <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/2019/05/31/Pi_Wifi/" itemprop="url">[樹莓派 Raspberry Pi] 純文字介面(命令列)設定WiFi連線教學</a></h1>
-        <div class="post-meta">
-          <span class="post-time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-                <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-31T01:19:56+08:00">
-                2019-05-31
-              </time>
-          </span>
-        </div>
-      </header>
-    <div class="post-body" itemprop="articleBody">
-          <p>有時候我們部屬樹莓派的時候<br>可能會使用純文字OS<br>那麼在沒有GUI的狀況下<br>我們要怎麼利用指令連上WiFi呢?</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="2019/05/31/Pi_Wifi/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+        </header>
+        <!-- 內文 -->
+      <div class="post-body" itemprop="articleBody">
+            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
+                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
+            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
+      </p></div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+      </footer>
     </div>
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
+  </article>
+  <!-- 第三篇 文章 -->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Tzuting">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="basis">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tzuting-學習筆記">
+      </span>
+        <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
+        <div class="post-meta">
+            <span class="post-time">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-o"></i>
+                </span>
+                  <span class="post-meta-item-text">Posted on</span>
+                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
+                  2022-08-10
+                </time>
+            </span>
+          </div>
+        </header>
+        <!-- 內文 -->
+      <div class="post-body" itemprop="articleBody">
+            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
+                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
+            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
+      </p></div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+      </footer>
+    </div>
+  </article>
+  <!-- 第四篇 文章 -->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Tzuting">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="basis">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tzuting-學習筆記">
+      </span>
+        <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
+        <div class="post-meta">
+            <span class="post-time">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-o"></i>
+                </span>
+                  <span class="post-meta-item-text">Posted on</span>
+                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
+                  2022-08-10
+                </time>
+            </span>
+          </div>
+        </header>
+        <!-- 內文 -->
+      <div class="post-body" itemprop="articleBody">
+            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
+                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
+            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
+      </p></div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+      </footer>
+    </div>
+  </article>
+  <!-- 第五篇 文章 -->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Tzuting">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="basis">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tzuting-學習筆記">
+      </span>
+        <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
+        <div class="post-meta">
+            <span class="post-time">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-o"></i>
+                </span>
+                  <span class="post-meta-item-text">Posted on</span>
+                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
+                  2022-08-10
+                </time>
+            </span>
+          </div>
+        </header>
+        <!-- 內文 -->
+      <div class="post-body" itemprop="articleBody">
+            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
+                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
+            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
+      </p></div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+      </footer>
+    </div>
   </article>
   </section>
 <!--  -->
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="page-number" href="page/1/">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a>
   </nav>
           </div>
         </div>
@@ -303,10 +377,10 @@
                     <a href="https://github.com/98tzuting" target="_blank" title="GitHub">
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
-                  <span class="links-of-author-item">
+                  <!-- <span class="links-of-author-item">
                     <a href="https://www.instagram.com/ziting1122/" target="_blank" title="instagram">
                         <i class="fa fa-fw fa-instagram"></i>instagram</a>
-                  </span>
+                  </span> -->
             </div>
         </div>
       </section>
@@ -314,13 +388,14 @@
   </aside>
       </div>
     </main>
+    <!-- 最下方的描述 -->
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Sami</span>
+  <span class="author" itemprop="copyrightHolder">Tzuting</span>
 </div>
   <div class="Reference">Reference &mdash; <a class="theme-link" target="_blank" href="https://www.fooish.com/">Fooish</a></div>
   <span class="post-meta-divider">|</span>
