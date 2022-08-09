@@ -2905,18 +2905,15 @@ body {
 }
 
 .category{
-  position:absolute;
+  position:static;
   float: left;
-  top:18%;  
-  left: 5%; 
+  margin-left: 5%;
+  margin-top : 18%;
   width: 240px; 
   height: 300px; 
   background: rgb(255, 255, 255);
-  flex: 1;
   overflow: auto;
-  margin: 0 auto;
   opacity: 0.8;
-  justify-content: center;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .category {
