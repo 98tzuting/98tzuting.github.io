@@ -3155,12 +3155,11 @@ pre {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .homebody {
-  background: url("/HTML/images/homebkg.jpg");
+  background: url("/HTML/images/homebkg.jpg") no-repeat  center  bottom;
   /* background: url("https://98tzuting.github.io/project/HTML/images/homebkg.jpg"); */
   background-blend-mode: multiply;
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: Cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -3180,7 +3179,7 @@ body {
 
 .all{
   width: 100%;
-  height: 70%;
+  height: 500px;
   margin: 0 0;
   display: inline-block;
 
@@ -3189,36 +3188,40 @@ body {
 .halfleft {
   float: left;
   width: 50%;
-  height: 80%;
+  height: 70%;
   display: block;
 
 }
 .halfright {
   float: right;
   width: 50%;
-  height: 80%;
+  height: 70%;
   display: block;
 
 }
 .img {
-  width: 90%;
-  height: 30%;
-  margin-top: 5%;
-  margin-left: 5%;;
+  margin-top: 20px;
+  margin-left: 5%;
   background-color: rgb(24, 16, 96);
   border: 5px  #2e7ac4;
   box-sizing: border-box;
   border-style:double;
-  padding: 20px;
-  border-radius: 100px;
-  text: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 40px;
+  text-align: center;
+  color: #0f8ba7;
 }
-
+.im {
+  font-size: 45px;
+  color: #50f0f9;
+}
 .home{
-  max-height: 10%;
-  font-size: 35px;
+  max-height: 15%; 
+  font-size: 50px;
   text-align: center;
   color: black;
+  font-weight:bold;
   background-color: rgb(251, 227, 106);
 }
 
