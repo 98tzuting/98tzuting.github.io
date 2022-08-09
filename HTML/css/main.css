@@ -2395,7 +2395,7 @@ pre code {
 .sidebar {
   float: left;
   position: fixed;
-  bottom: 1%; 
+  bottom: 5%; 
   width: 240px;
   background: rgb(255, 255, 255);
   box-shadow: none;
@@ -2540,10 +2540,10 @@ pre code {
   border-radius: 16px;
   opacity: 0;
 }
-/* JS後的位置 */
+/* 資訊列JS後的位置 */
 .sidebar-inner.affix {
   position: fixed;
-  bottom: 80px; 
+  bottom: 10%; 
 }
 .sidebar-inner.affix-bottom {
   position: absolute;
@@ -2905,11 +2905,11 @@ body {
 }
 
 .category{
-  position:static;
+  position:absolute;
   float: left;
-  margin-left: 5%;
-  margin-top : 18%;
-  width: 240px; 
+  left: 5%;
+  top : 270px;
+  width: 240px;  
   height: 300px; 
   background: rgb(255, 255, 255);
   overflow: auto;
