@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
+  <base href="https://98tzuting.github.io/project/HTML/">
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <base href="/HTML/">
+  <!-- <base href="/HTML/"> -->
 <head>
   <title>tzuting-學習筆記</title>
   <!-- 描述HTML文件的元資訊 -->
@@ -23,11 +23,11 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="tzuting-學習筆記">
   <meta property="og:url" content="https://98tzuting.github.io/project/main.html">
-  <meta property="og:description" content="足夠努力，才能毫不費力">
+  <meta property="og:description" content="付出不在于多少，只要值得就好">
   <!-- 載入外部 CSS 樣式表 (stylesheet) -->
-  <!-- <link href="lib/pace/pace-theme-loading-bar.min.css" rel="stylesheet"> -->
-  <!-- <link href="lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"> -->
+  <link href="lib/pace/pace-theme-loading-bar.min.css" rel="stylesheet">
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery.treeview.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
   <!-- apple-touch-icon 用來設定蘋果 (Apple) iOS Safari 將網頁 -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-next.png">
@@ -45,7 +45,7 @@
       root: '/',
       scheme: 'Gemini',
       version: '5.1.4',
-      sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+      sidebar: {"position":"left-button","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
       fancybox: true,
       tabs: true,
       motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -62,6 +62,17 @@
       }
     };
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#treeview").treeview({
+            toggle: function() {
+                console.log("%s was toggled.", $(this).find(">span").text());
+            }
+        });
+    });
+    </script>
   <!-- 無JS插件時的錯誤訊息 -->
   <noscript>
     <p>此網頁需要支援 JavaScript 才能正確運行，請先至你的瀏覽器設定中開啟 JavaScript。</p>
@@ -106,7 +117,7 @@
         <ul id="menu" class="menu">
             <!-- Home -->
             <li class="menu-item menu-item-home">
-              <a href="main.html" rel="section">
+              <a href="Home.html" rel="section">
                   <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
                 Home
               </a>
@@ -118,17 +129,30 @@
                 About
               </a>
             </li>
-            <!-- Archives -->
+            <!-- catalog -->
             <li class="menu-item menu-item-archives">
-              <a href="archives/index.html  " rel="section">
+              <a href="archives/catalog.html  " rel="section">
                   <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-                Archives
+                Catalog
               </a>
             </li>
         </ul>
     </nav>
     </div>
   </header>
+    <!-- 目錄 -->
+    <div id="treeview" class="filetree">
+        <li><span class="folder">密碼修改</span>
+            <ul>
+            <li><span class="file">密碼修改</span></li>
+            </ul>
+        </li>
+        <li><span class="folder">系統管理</span>
+            <ul>
+            <li><span class="file">系統管理</span></li>
+            </ul>
+        </li>
+    </div>
   <!-- 內文 -->
     <main id="main" class="main">
       <div class="main-inner">
@@ -169,204 +193,29 @@
               <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
               <strong>不會過繁瑣的解釋，能了解使用即可</strong>
           <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
-    </p></div>
+    </p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
     <footer class="post-footer">
         <div class="post-eof"></div>
     </footer>
   </div>
   </article>
-  <!-- 第二篇 文章 -->
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Tzuting">
-        <meta itemprop="description" content>
-        <meta itemprop="image" content="basis">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tzuting-學習筆記">
-      </span>
-        <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">
-                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
-        <div class="post-meta">
-            <span class="post-time">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-o"></i>
-                </span>
-                  <span class="post-meta-item-text">Posted on</span>
-                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
-                  2022-08-10
-                </time>
-            </span>
-          </div>
-        </header>
-        <!-- 內文 -->
-      <div class="post-body" itemprop="articleBody">
-            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
-              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
-                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
-            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
-      </p></div>
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-      </footer>
-    </div>
-  </article>
-  <!-- 第三篇 文章 -->
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Tzuting">
-        <meta itemprop="description" content>
-        <meta itemprop="image" content="basis">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tzuting-學習筆記">
-      </span>
-        <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">
-                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
-        <div class="post-meta">
-            <span class="post-time">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-o"></i>
-                </span>
-                  <span class="post-meta-item-text">Posted on</span>
-                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
-                  2022-08-10
-                </time>
-            </span>
-          </div>
-        </header>
-        <!-- 內文 -->
-      <div class="post-body" itemprop="articleBody">
-            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
-              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
-                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
-            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
-      </p></div>
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-      </footer>
-    </div>
-  </article>
-  <!-- 第四篇 文章 -->
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Tzuting">
-        <meta itemprop="description" content>
-        <meta itemprop="image" content="basis">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tzuting-學習筆記">
-      </span>
-        <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">
-                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
-        <div class="post-meta">
-            <span class="post-time">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-o"></i>
-                </span>
-                  <span class="post-meta-item-text">Posted on</span>
-                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
-                  2022-08-10
-                </time>
-            </span>
-          </div>
-        </header>
-        <!-- 內文 -->
-      <div class="post-body" itemprop="articleBody">
-            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
-              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
-                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
-            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
-      </p></div>
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-      </footer>
-    </div>
-  </article>
-  <!-- 第五篇 文章 -->
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="基礎操作/Sever/kekcc.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Tzuting">
-        <meta itemprop="description" content>
-        <meta itemprop="image" content="basis">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tzuting-學習筆記">
-      </span>
-        <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">
-                  <a class="post-title-link" href="基礎操作/Sever/kekcc.html" itemprop="url">基礎操作 &mdash; 常用的Linux指令</a></h1>
-        <div class="post-meta">
-            <span class="post-time">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-o"></i>
-                </span>
-                  <span class="post-meta-item-text">Posted on</span>
-                <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-08-10T06:22:42+08:00">
-                  2022-08-10
-                </time>
-            </span>
-          </div>
-        </header>
-        <!-- 內文 -->
-      <div class="post-body" itemprop="articleBody">
-            <p>相信各位點進來想必對Linux指令有一點需求<br>像是
-              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-                <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
-                <strong>不會過繁瑣的解釋，能了解使用即可</strong>
-            <div class="post-button text-center"><a class="btn" href="基礎操作/Sever/kekcc.html" rel="contents"> Read more &raquo;</a></div>
-      </p></div>
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-      </footer>
-    </div>
-  </article>
   </section>
-<!--  -->
+
+<!-- 最下面的頁數 -->
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-          </div>
-        </div>
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-  <aside id="sidebar" class="sidebar">
-    
+  </nav></div></div>
+<!-- 左邊 資訊欄   -->
+  <aside class="sidebar">
     <div class="sidebar-inner">
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <!-- <img class="site-author-image" itemprop="image" src="https://scontent.fkhh1-1.fna.fbcdn.net/v/t1.0-9/34017471_1884281794925404_4375461588786741248_n.jpg?_nc_cat=101&_nc_ht=scontent.fkhh1-1.fna&oh=115ceeb3c2829d4899badcd5070ff232&oe=5D769ADE" alt="Tzuting"> -->
               <p class="site-author-name" itemprop="name">Tzuting </p>
               <p class="site-description motion-element" itemprop="description"> 所謂的好學生<br>只是做壞事沒被老師抓到而已</p>
           </div>
-          <nav class="site-state motion-element">
-              <div class="site-state-item site-state-posts">
-                <a href="archives/">
-                  <span class="site-state-item-count">難以計算</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-          </nav>
           <!-- Email、Github、instagraminstagram -->
             <div class="links-of-author motion-element">
                   <span class="links-of-author-item">
@@ -390,58 +239,51 @@
     </main>
     <!-- 最下方的描述 -->
     <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Tzuting</span>
-</div>
-  <div class="Reference">Reference &mdash; <a class="theme-link" target="_blank" href="https://www.fooish.com/">Fooish</a></div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="site-uv">
-      <i class="fa fa-user"></i> 訪客數
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-    <span class="site-pv">
-      <i class="fa fa-eye"></i> 總訪問次數
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-</div>
-      </div>
-    </footer>
-      <div class="back-to-top">
+        <div class="text-center">
+          <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+          <span class="with-love">
+          <i class="fa fa-user"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">Tzuting</span>
+          <div class="theme-info"> &mdash;<a href="981122@hotmail.com.tw"><span class="connect">Email</span></a></div><br>
+          </div>
+          <div class="Reference">Reference :
+          <a class="theme-link" target="_blank" href="https://www.fooish.com/"><span class="connect">Fooish</span></a><span> </span>
+          <a class="theme-link" target="_blank" href="https://github.com/"><span class="connect">GitHub</span></a><span> </span>
+          <a class="theme-link" target="_blank" href="https://code.visualstudio.com/"><span class="connect">Vscode</span></a><span> </span>
+          <a class="theme-link" target="_blank" href="https://git-scm.com/"><span class="connect">Git</span></a>
+          </div>
+          <div class="busuanzi-count">
+          <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span class="site-uv">
+          <i class="fa fa-user"></i> 訪客數
+          <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+          </span>
+        <span class="site-pv">
+          <i class="fa fa-eye"></i> 總訪問次數
+          <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+          </span>
+          <p>本網站為作者的學習資料內容，一切的內容都用在學習上， 並不會使用於商業行為，主要作為自己未來學習歷程的解析之用。
+            若網頁內容方面有任何不小心的侵權，還請與作者聯繫，我們會盡快撤除的。</p>
+          </div>
+        </div>
+      </footer>
+    <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-      </div>
+    </div>
   </div>
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-      <script type="text/javascript" src="lib/jquery/index.js"></script>
-      <script type="text/javascript" src="lib/fastclick/lib/fastclick.min.js"></script>
-      <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js"></script>
-      <script type="text/javascript" src="lib/velocity/velocity.min.js"></script>
-      <script type="text/javascript" src="lib/velocity/velocity.ui.min.js"></script>
-      <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
+    <!-- 左邊資訊欄Js -->
+    <script type="text/javascript" src="lib/jquery/index.js"></script>
+    <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="lib/velocity/velocity.min.js"></script>
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="js/src/utils.js"></script>
     <script type="text/javascript" src="js/src/motion.js"></script>
     <script type="text/javascript" src="js/src/affix.js"></script>
     <script type="text/javascript" src="js/src/schemes/pisces.js"></script>
+    <!-- 右下的回到最上端 -->
     <script type="text/javascript" src="js/src/bootstrap.js"></script>
-  <script src="live2dw/lib/L2Dwidget.min.js">
-    </script>
-    <!-- 初音搖頭 -->
-    <script>
-    L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2dw/assets/assets/miku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});
-    </script>
     </body>
-    
-  <script type="text/javascript" src="js/src/dynamic_bg.js">
-</script>
+    <script type="text/javascript" src="js/src/dynamic_bg.js"></script>
 </html>
