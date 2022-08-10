@@ -1,0 +1,153 @@
+/* Home page */
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.bg_content {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+body {
+  background: url("https://98tzuting.github.io/project/HTML/images/homebkg.jpg") no-repeat  center  bottom;
+  background-blend-mode: multiply;
+  background-size: Cover;
+  background-attachment: fixed;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 800px;
+  opacity: 0.7;
+}
+a {
+  background-color: transparent;
+}
+a:active,a:hover {
+  outline: 0;
+}
+.page-home{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 800px;
+}
+.left{
+  position:relative;
+  float: left;
+  width: 25%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.85);
+}
+.header{
+  position: relative;
+  
+}
+.header-inner{
+  position: relative;
+  text-align: center;
+  background: rgba(234, 241, 24, 0.85);
+}
+.site-brand-wrapper{
+  position: relative;
+  margin-top: 5%;
+}
+.site-meta{
+  position: relative;
+  left: 5%;
+  width: auto;
+  max-width: 240px;
+  border-radius: 20px;
+  padding: 20px 0;
+  color: #fff;
+  background: rgb(0, 0, 0);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-meta {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+}
+@media (max-width: 767px) {
+  .site-meta {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+}
+.site-title {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  font-size: 28px;
+  color: white !important;
+  font-weight:bold;
+}
+.site-nav{
+  position: relative;
+  left: 5%;
+  width: auto;
+  max-width: 240px;
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  color: black !important;
+  background: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+.main {
+  position: relative;
+  float: right;
+  height: auto;
+  background: rgba(24, 241, 82, 0.85);
+  padding-bottom: 150px;
+  width: 75%;
+}
+
+
+
+/* fialnnal */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  min-height: 50px;
+  font-size: 10px;
+  color: #999;
+}
+.footer-inner {
+  box-sizing: border-box;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+}
+@media (min-width: 1600px) {
+  .footer-inner {
+    width: 900px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-inner {
+    width: auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-inner {
+    width: auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.theme-link{
+  color: #00c47d;
+}
