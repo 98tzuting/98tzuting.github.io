@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: 'Noto Sans TC', sans-serif;
+  /* font-family: 'Noto Sans TC', sans-serif; */
 }
 .bg_content {
   position: fixed;
