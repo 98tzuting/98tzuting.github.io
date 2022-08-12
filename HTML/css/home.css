@@ -1,5 +1,5 @@
 /* Home page */
-*{
+* {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14,7 +14,8 @@
   opacity: 0.8;
 }
 body {
-  background: url("https://98tzuting.github.io/project/HTML/images/homebkg.jpg") no-repeat  center  bottom;
+  background: url("https://98tzuting.github.io/project/HTML/images/homebkg.jpg")
+    no-repeat center bottom;
   background-blend-mode: multiply;
   background-size: Cover;
   background-attachment: fixed;
@@ -22,40 +23,57 @@ body {
 a {
   background-color: transparent;
 }
-a:active,a:hover {
+a:active,
+a:hover {
   outline: 0;
 }
-.header{
-  max-height: 20%; 
+.header {
+  max-height: 20%;
   font-size: 70px;
   text-align: center;
   color: black;
-  font-weight:bold;
+  font-weight: bold;
   background-color: rgb(251, 227, 106);
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .header {
-    font-size: 55px !important;
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
   }
-  .im {
-    font-size: 35px !important;
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
   }
 }
-@media (max-width: 767px) {
-  .header {
-    font-size: 50px !important;
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
   }
-  .im {
-    font-size: 30px !important;
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
-.all{
+
+@media (max-width: 500px) {
+  .github-corner {
+    display: none !important;
+  }
+}
+.all {
   width: 100%;
   height: auto;
   margin: 0 0;
   display: inline-block;
 }
-.halfleft ,.halfright {
+.halfleft,
+.halfright {
   float: left;
   width: 50%;
   height: 70%;
@@ -65,9 +83,9 @@ a:active,a:hover {
   margin-top: 20px;
   margin-left: 5%;
   background-color: rgb(24, 16, 96);
-  border: 5px  #2e7ac4;
+  border: 5px #2e7ac4;
   box-sizing: border-box;
-  border-style:double;
+  border-style: double;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 40px;
@@ -98,6 +116,6 @@ a:active,a:hover {
     width: 900px;
   }
 }
-.theme-link{
+.theme-link {
   color: #00c47d;
 }

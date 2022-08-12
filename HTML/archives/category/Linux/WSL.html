@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
+  <base href="https://98tzuting.github.io/project/HTML/">
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <base href="/HTML/">
-<head>
-    <title>tzuting-學習筆記</title>
+  <!-- <base href="/HTML/"> -->
+  <head>
+    <title>tzuting-notes</title>
     <!-- 描述HTML文件的元資訊 -->
     <meta charset="utf-8">
     <meta name="description" content="作者：劉仔">
-    <meta name="keywords" content="tzuting-學習筆記">
+    <meta name="keywords" content="tzuting-notes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
     <!-- 屏蔽百度转码 -->
@@ -21,11 +21,13 @@
     <meta http-equiv="expires" content="0">
     <!-- 社群網站平台支援的Open Graph Tagss -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="tzuting-學習筆記">
-    <meta property="og:url" content="https://98tzuting.github.io/project/main.html">
+    <meta property="og:title" content="tzuting-notes">
+    <meta property="og:url" content="https://98tzuting.github.io/project/HTML/Home.html">
     <meta property="og:description" content="付出不在于多少，只要值得就好">
     <!-- 載入外部 CSS 樣式表 (stylesheet) -->
     <link href="css/template.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome的icon -->
+    <script src="https://kit.fontawesome.com/e3859e1300.js" crossorigin="anonymous"></script>
     <!-- icon 是用來設定網頁 Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/coding_32px_1227803_easyicon.net.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/coding_16px_1227803_easyicon.net.png">
@@ -40,21 +42,18 @@
     <noscript>
       <p>此網頁需要支援 JavaScript 才能正確運行，請先至你的瀏覽器設定中開啟 JavaScript。</p>
     </noscript>
-</head>
+  </head>
   
 <body>
 <!-- 版面位置 -->
-  <div class="page-home">
-  <div class="headband"></div>
+  <div class="all">
   <div class="bg_content"><canvas id="galaxy"></canvas></div>
 <!-- GitHub Corners (73-77) -->
   <span>
     <a href="https://github.com/98tzuting" class="github-corner" aria-label="View source on GitHub">
     <svg width="80" height="80" viewbox="0 0 250 250" style="fill:#030303; color:rgb(255, 255, 255); position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
-    <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}@media (min-width: 768px) and (max-width: 991px) {.github-corner {display: none !important;}}@media (max-width: 767px) {.github-corner {display: none !important;}}</style>
   </span>
-<div class="left">
   <!-- header 標題 -->
   <header id="header" class="header">
     <div class="header-inner">
@@ -66,52 +65,43 @@
     </div>
     <p class="site-subtitle">student</p>
     </div>
-    <!-- 頁面小於990px時顯示選單 -->
+    <!-- 頁面小於850px時顯示選單 -->
     <div class="site-nav-toggle">
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
+      <button>
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </div>
     <!-- meau 列表 -->
     <nav class="site-nav">
-        <ul id="menu" class="menu">
-            <!-- Home -->
-            <li class="menu-item menu-item-home">
-              <a href="Home.html" rel="section">
-                  <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-                Home
-              </a>
-            </li>
-            <!-- About -->
-            <li class="menu-item menu-item-about">
-              <a href="about/index.html " rel="section">
-                  <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-                About
-              </a>
-            </li>
-            <!-- catalog -->
-            <li class="menu-item menu-item-archives">
-              <a href="archives/catalog.html  " rel="section">
-                  <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-                Catalog
-              </a>
-            </li>
-        </ul>
+      <form>
+        <input type="search" placeholder="請輸入關鍵字">
+        <button><i class="fa fa-search"></i></button>
+      </form>
+        <!-- Home -->
+        <a href="Home.html">
+          <i class="menu-item-icon fa fa-fw fa-home"></i> 
+            Home
+          </a>
+        <!-- About -->
+          <a href="about/index.html ">
+              <i class="menu-item-icon fa fa-fw fa-user"></i>
+            About
+          </a>
+        <!-- catalog -->
+          <a href="archives/catalog.html  ">
+              <i class="menu-item-icon fa fa-fw fa-archive"></i>
+            Catalog
+          </a>
     </nav>
-    </div>
-  </header>
-<!-- 目錄 -->
+    <!-- 目錄 -->
         <div class="category" id="category">
             <details>
               <summary>
                 <span class="category-item">Linux</span>
               </summary>
-              <details>
-                <summary>
-                    <a href="archives/category/Linux/WSL.html" rel="section"><span class="file">WSL</span></a>                  
-                </summary>
-              </details>
+                <span class="file"><a href="archives/category/Linux/WSL.html"><i class="fa-solid fa-file"></i>
+                      WSL</a></span>
             </details>
             <details>
               <summary>
@@ -139,11 +129,13 @@
               </summary>
             </details>
           </div>
-</div>
+    </div>
+  
+
+    </header>
 <!-- main --> 
 <main id="main" class="main">
       <div class="main-inner">
-        <div class="content-wrap">
 <!-- 顯示路徑 -->
 <header class="path">
   <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
@@ -152,6 +144,7 @@
     <span class="style">-></span>
     <span class="style" >WSL</span>
 </header>
+<div class="content-wrap">
 <!-- 第一篇 文章 -->
   <div id="content" class="content">
   <section id="posts" class="posts-expand">
@@ -175,6 +168,7 @@
               <br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1
 </div>
 </div>
+</div></div>
 </article></section>
 <!-- 最下面的頁數 -->
   <nav class="pagination">
@@ -183,9 +177,8 @@
     <a class="page-number" href="page/3/">3</a>
     <a class="extend next" rel="next" href="page/3/">
     <i class="fa fa-angle-right"></i></a>
-  </nav></div></div>
-</main>
-</div>
+  </nav>
+</main></div>
 <!-- 最下方的描述 -->
 <footer id="footer" class="footer">
   <div class="footer-inner">
@@ -216,6 +209,6 @@
     </div>
   </div>
 </footer>
-<!-- 背景動畫 -->
-    <script type="text/javascript" src="js/src/dynamic_bg.js"></script>
+
+</body>
 </html>
