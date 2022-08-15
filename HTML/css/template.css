@@ -188,6 +188,7 @@ nav a:hover .fa{
   left: 20%;
   margin-top : 190px;
   width: 100%;
+  max-width:240px;
   height: auto; 
   background: rgb(255, 255, 255);
   overflow: auto;
