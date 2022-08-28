@@ -441,6 +441,14 @@ pre {
   font-size: inherit;
   white-space: pre-wrap;
 }
+tr{
+  padding: 1%;
+}
+
+
+
+
+
 /* pagination */
 .pagination {
   position:relative;

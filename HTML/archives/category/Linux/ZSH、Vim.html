@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <base href="https://98tzuting.github.io/project/HTML/">
+  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <!-- <base href="/HTML/"> -->
+  <base href="/HTML/">
   <head>
     <title>tzuting-notes</title>
     <!-- 描述HTML文件的元資訊 -->
@@ -96,7 +96,7 @@
     <details>
       <summary>
             <a class="file" href="archives/category/Linux/WSL.html">
-              <i class="fa fa-file-lines"></i> WSL設</a>
+              <i class="fa fa-file-lines"></i> WSL設定</a>
       </summary>
     </details>
     <details>
@@ -195,67 +195,103 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >WSL &mdash; 在Windows建立Linux</h1>
+            <h1 class="post-title" >Linux &mdash; 基礎指令</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-08-16
+                2022-08-28
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-<p>想在Windows使用Ubuntu，首先在Windows開啟Windows子系統Linux版、虛擬機器平台</p><br>
-<img class="text-center" src="images/Liunx/1.png"
-alt="在應用程式->選用功能->更多Windows功能，開啟Windows子系統Linux版、虛擬機器平台">
-<strong>開啟後可以重新開機</strong><br>
-下載Ubuntu，可以在Mincrosoft or 網路上下載 or 利用PowerShell下載<br>
-<div class="img">
-  <img class="img-left" src="images/Liunx/2.png"
-alt="下載Ubuntu">
-<img class="img-right" src="images/Liunx/3.png"
-alt="下載Ubuntu">
-</div>
-<div style="font-size:larger;font-weight:bolder;text-align:center;">下面是常使用的指令 :<br></div>
-下載Ubuntu (利用PowerShell下載)
-<pre>wsl --install --distribution  <i class="fa-solid fa-angle-left"></i>Distribution Name<i class="fa-solid fa-angle-right"></i></pre>
-列出已安裝的 Linux 發行版本
-<pre>wsl --list --verbose 縮寫為 wsl -l -v</pre>
-更新WSL
-<pre>wsl --update</pre>
-檢查狀態
-<pre>wsl --status</pre>
-<div style="font-size:larger;font-weight:bolder;text-align:center;">若要轉換成WSL2<br></div>
-以<strong> 系統管理員  </strong>開啟PowerShell
-輸入指令啟動虛擬機平台可選組件(若上方未開或有錯誤時則需要此步驟)
-<pre>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform</pre>
-若已完成啟動虛擬機平台則顯示為下圖
-<img class="text-center" src="images/Liunx/4.png"
-alt="啟動虛擬機平台">
-第一次跑則會詢問是否重新開機，輸入Y則重開機<br>
-<div style="font-size:larger;font-weight:bolder;text-align:center;">下面是常使用的指令 :<br></div>
-WSL轉換成WSL2
-<pre>wsl --set-version Ubuntu 2</pre>
-安裝的所有WSL預設成WSL2
-<pre>wsl --set-default-version 2</pre>
-<div style="font-size:larger;font-weight:bolder;text-align:center;">Reference :<br></div>
-<ol>
-  <li><a href="https://samiouob.github.io/2019/06/17/WSL2/#more">https://samiouob.github.io/2019/06/17/WSL2/#more</a></li>
-  <li><a href="https://docs.microsoft.com/zh-tw/windows/wsl/install">https://docs.microsoft.com/zh-tw/windows/wsl/install</a></li>
-  <li><a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands">https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands</a></li>
-  <li><a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands#set-wsl-version-to-1-or-2">https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands#set-wsl-version-to-1-or-2
-  </a></li>
-  </ol>
+          <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+             <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>
+              首先要先了解什麼是絕對位置和相對位置<br>
+              通常你的位置會在目錄也就是波浪號<strong> ~ </strong><br>
+              最開始位置為<strong> / </strong><br>
+              有波浪號或是..就是使用相對位置，一個點代表現在位置，兩個點代表上一層<br>
+              絕對位置通常很大一串，像是<strong> /home/使用者/project/test1/justlike.py </strong><br>
+              使用絕對位置會比較麻煩複雜，但在腳本中建議使用絕對位置以免檔案抓不到<br>
+              但一般在Linux處理使用相對位置較快速。<br><br>
+              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
+              <table style="left:0;width: 100%;text-align: center;font-size: large;">
+                <colgroup span="3" style="background-color: rgb(215, 214, 214);"></colgroup>
+                <tr>
+                  <th>指令</th>
+                  <th>作用</th>
+                  <th>備註</th>
+                </tr>
+                <tr>
+                  <td>ls</td>
+                  <td>顯示位置底下的資料</td>
+                  <td>有許多額外的附加條件<br>像是<strong> -a </strong>列出所有項目包括隱藏的<strong> -l </strong>直式列出</td>
+                </tr>
+                <tr>
+                  <td>mkdir</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>cd</td>
+                  <td>移動</td>
+                  <td>後面可接絕對位置或是相對位置</td>
+                </tr>
+                <tr>
+                  <td>ssh</td>
+                  <td>遠端連線</td>
+                  <td>ssh 使用者@IP位置</td>
+                </tr>
+                <tr>
+                  <td>cp</td>
+                  <td>複製</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>scp</td>
+                  <td>遠端複製</td>
+                  <td>rsync 是另一種方式，速度較快可定期備份和壓縮傳輸</td>
+                </tr>
+                <tr>
+                  <td>mv</td>
+                  <td>移動or改名字</td>
+                  <td>移動時後面加路徑，改名字則為文字</td>
+                </tr>
+                <tr>
+                  <td>rm</td>
+                  <td>刪除</td>
+                  <td>加入 -r 可以刪除資料夾 -f 可以強制刪除</td>
+                </tr>
+                <tr>
+                  <td>vi</td>
+                  <td>開啟某檔案</td>
+                  <td>有插件 vim 可以客製化的使用，更方便</td>
+                </tr>
+                <tr>
+                  <td>touch</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pwd</td>
+                  <td>查看現在位置</td>
+                  <td></td>
+                </tr>
+
+
+              </table>
+          </p>
 </div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
-  <nav class="pagination">
-    <span class="page-number"><i class="fa-solid fa-door-open"></i></span>
-    <a class="page-number" href="archives/category/Linux/基礎操作.html">
-    <i class="fa fa-angle-right"></i></a>
-  </nav>
+<nav class="pagination">
+  <span class="page-number"><i class="fa-solid fa-door-open"></i></span>
+  <a class="page-number" href="archives/category/Linux/ZSH、Vim.html">
+  <i class="fa fa-angle-right"></i></a>
+</nav>
 </main></div>
 <!-- 最下方的描述 -->
 <footer id="footer" class="footer">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
+  <base href="https://98tzuting.github.io/project/HTML/">
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <base href="/HTML/">
+  <!-- <base href="/HTML/"> -->
   <head>
     <title>tzuting-notes</title>
     <!-- 描述HTML文件的元資訊 -->
@@ -195,11 +195,11 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >WSL &mdash; 在Windows建立Linux</h1>
+            <h1 class="post-title" >Linux &mdash; 基礎指令</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-08-16
+                2022-08-28
               </time>
         </div>
       </header>
@@ -207,21 +207,91 @@
 <div class="post-body" itemprop="articleBody">
           <p>相信各位點進來想必對Linux指令有一點需求<br>像是
              <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>已經了解這些指令的就可以跳過<br>我的原則: 
-              <strong>不會過繁瑣的解釋，能了解使用即可</strong></p>
-              djshadjo
-            </div>
+              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>
+              首先要先了解什麼是絕對位置和相對位置<br>
+              通常你的位置會在目錄也就是波浪號<strong> ~ </strong><br>
+              最開始位置為<strong> / </strong><br>
+              有波浪號或是..就是使用相對位置，一個點代表現在位置，兩個點代表上一層<br>
+              絕對位置通常很大一串，像是<strong> /home/使用者/project/test1/justlike.py </strong><br>
+              使用絕對位置會比較麻煩複雜，但在腳本中建議使用絕對位置以免檔案抓不到<br>
+              但一般在Linux處理使用相對位置較快速。<br><br>
+              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
+              <table style="left:0;width: 100%;text-align: center;font-size: large;">
+                <colgroup span="3" style="background-color: rgb(215, 214, 214);"></colgroup>
+                <tr>
+                  <th>指令</th>
+                  <th>作用</th>
+                  <th>備註</th>
+                </tr>
+                <tr>
+                  <td>ls</td>
+                  <td>顯示位置底下的資料</td>
+                  <td>有許多額外的附加條件<br>像是<strong> -a </strong>列出所有項目包括隱藏的<strong> -l </strong>直式列出</td>
+                </tr>
+                <tr>
+                  <td>mkdir</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>cd</td>
+                  <td>移動</td>
+                  <td>後面可接絕對位置或是相對位置</td>
+                </tr>
+                <tr>
+                  <td>ssh</td>
+                  <td>遠端連線</td>
+                  <td>ssh 使用者@IP位置</td>
+                </tr>
+                <tr>
+                  <td>cp</td>
+                  <td>複製</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>scp</td>
+                  <td>遠端複製</td>
+                  <td>rsync 是另一種方式，速度較快可定期備份和壓縮傳輸</td>
+                </tr>
+                <tr>
+                  <td>mv</td>
+                  <td>移動or改名字</td>
+                  <td>移動時後面加路徑，改名字則為文字</td>
+                </tr>
+                <tr>
+                  <td>rm</td>
+                  <td>刪除</td>
+                  <td>加入 -r 可以刪除資料夾 -f 可以強制刪除</td>
+                </tr>
+                <tr>
+                  <td>vi</td>
+                  <td>開啟某檔案</td>
+                  <td>有插件 vim 可以客製化的使用，更方便</td>
+                </tr>
+                <tr>
+                  <td>touch</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pwd</td>
+                  <td>查看現在位置</td>
+                  <td></td>
+                </tr>
+
+
+              </table>
+          </p>
+</div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
-  <nav class="pagination">
-    <span class="page-number">1</span>
-    <a class="page-number" href="page/2/">2</a>
-    <a class="page-number" href="page/3/">3</a>
-    <a class="page-number" href="page/3/">
-    <i class="fa fa-angle-right"></i></a>
-  </nav>
+<nav class="pagination">
+  <span class="page-number"><i class="fa-solid fa-door-open"></i></span>
+  <a class="page-number" href="archives/category/Linux/ZSH、Vim.html">
+  <i class="fa fa-angle-right"></i></a>
+</nav>
 </main></div>
 <!-- 最下方的描述 -->
 <footer id="footer" class="footer">
