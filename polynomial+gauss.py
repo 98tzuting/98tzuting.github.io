@@ -1,5 +1,4 @@
 import ROOT
-import basf2
 import sys
 import ROOT.RooFit as rf
 from ROOT import (
