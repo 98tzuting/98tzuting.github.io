@@ -22,6 +22,7 @@ body {
 }
 a {
   background-color: transparent;
+  word-break:break-all;
 }
 a:active,
 a:hover {
@@ -118,4 +119,9 @@ a:hover {
 }
 .theme-link {
   color: #00c47d;
+}
+
+
+pre {
+  word-break:break-all;
 }

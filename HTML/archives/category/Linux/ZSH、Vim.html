@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <!-- 設定所有相對路徑的根 URL (github發佈) -->
-  <!-- <base href="https://98tzuting.github.io/project/HTML/"> -->
+  <base href="https://98tzuting.github.io/project/HTML/">
   <!-- 設定所有相對路徑的根 URL (內測) -->
-  <base href="/HTML/">
+  <!-- <base href="/HTML/"> -->
   <head>
     <title>tzuting-notes</title>
     <!-- 描述HTML文件的元資訊 -->
@@ -113,12 +113,6 @@
     </details>
     <details>
       <summary>
-        <a class="file" href="archives/category/Linux/Git&GitHub.html">
-          <i class="fa fa-file-lines"></i> Git & GitHub</a>
-      </summary>
-    </details>
-    <details>
-      <summary>
         <a class="file" href="archives/category/Linux/Linux_rsync_(scp).html">
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
@@ -143,12 +137,6 @@
       <summary>
         <a class="file" href="archives/category/Git/learning.html">
           <i class="fa fa-file-lines"></i> Git 設置與安裝並使用</a>
-      </summary>
-    </details>
-    <details>
-      <summary>
-        <a class="file" href="archives/category/Git/github.html">
-          <i class="fa fa-file-lines"></i> github 設置與安裝並使用</a>
       </summary>
     </details>
   </details>
@@ -221,7 +209,7 @@
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
     <span class="style" >Linux</span>
     <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >WSL</span>
+    <span class="style" >ZSH 、 Vim</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
@@ -230,93 +218,57 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >ZSH、Vim</h1>
+            <h1 class="post-title" >ZSH 、 Vim</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-09-04
+                2022-09-06
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>此篇是以 ubuntu 作為範例<br>
-             <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
-              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>
-              首先要先了解什麼是絕對位置和相對位置<br>
-              通常你的位置會在目錄也就是波浪號<strong> ~ </strong><br>
-              最開始位置為<strong> / </strong><br>
-              有波浪號或是..就是使用相對位置，一個點代表現在位置，兩個點代表上一層<br>
-              絕對位置通常很大一串，像是<strong> /home/使用者/project/test1/justlike.py </strong><br>
-              使用絕對位置會比較麻煩複雜，但在腳本中建議使用絕對位置以免檔案抓不到<br>
-              但一般在Linux處理使用相對位置較快速。<br><br>
-              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
-              <table style="left:0;width: 100%;text-align: center;font-size: large;">
-                <colgroup span="3" style="background-color: rgb(215, 214, 214);"></colgroup>
-                <tr>
-                  <th>指令</th>
-                  <th>作用</th>
-                  <th>備註</th>
-                </tr>
-                <tr>
-                  <td>ls</td>
-                  <td>顯示位置底下的資料</td>
-                  <td>有許多額外的附加條件<br>像是<strong> -a </strong>列出所有項目包括隱藏的<strong> -l </strong>直式列出</td>
-                </tr>
-                <tr>
-                  <td>mkdir</td>
-                  <td>創建資料夾</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>cd</td>
-                  <td>移動</td>
-                  <td>後面可接絕對位置或是相對位置</td>
-                </tr>
-                <tr>
-                  <td>ssh</td>
-                  <td>遠端連線</td>
-                  <td>ssh 使用者@IP位置</td>
-                </tr>
-                <tr>
-                  <td>cp</td>
-                  <td>複製</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>scp</td>
-                  <td>遠端複製</td>
-                  <td>rsync 是另一種方式，速度較快可定期備份和壓縮傳輸</td>
-                </tr>
-                <tr>
-                  <td>mv</td>
-                  <td>移動or改名字</td>
-                  <td>移動時後面加路徑，改名字則為文字</td>
-                </tr>
-                <tr>
-                  <td>rm</td>
-                  <td>刪除</td>
-                  <td>加入 -r 可以刪除資料夾 -f 可以強制刪除</td>
-                </tr>
-                <tr>
-                  <td>vi</td>
-                  <td>開啟某檔案</td>
-                  <td>有插件 vim 可以客製化的使用，更方便</td>
-                </tr>
-                <tr>
-                  <td>touch</td>
-                  <td>創建資料夾</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>pwd</td>
-                  <td>查看現在位置</td>
-                  <td></td>
-                </tr>
+          <p>ZSH 本名是Z Shell，直翻為殼層，除了Z Shell 還有最初始的B Shell <br>
+          </p><p>最常被用來設置<strong> 環境變數 </strong>與<strong> 寫腳本 </strong></p>
+              首先還是需要下載，分為下載ZSH、下載oh-my-zsh、更改主題、設置簡單alias、下載插件plugins<br>
+              <strong>這裡我使用為Ubuntu 來做示範</strong><br><br> 
+              <div style="font-size:larger;font-weight:bolder;text-align:center;">下面開始一步一步操作 :<br></div>
+              下載ZSH 
+              <pre> sudo apt install zsh </pre>
+              下載oh-my-zsh
+              <pre> sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh </pre>
+              更改主題，找好想要的主題，我這裡使用powerlevel10k，也可以下載字體。
+              <pre> git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k</pre>
+              <pre> echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc </pre>
+              Clone the repository
+              <pre> git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k </pre>
+              設置簡單alias(舉例來說，打re替代source ~/.zshrc)
+              <pre> alias re="source ~/.zshrc" </pre>
+              下載插件plugins<br>
+              建議:zsh-autosuggestions、zsh-syntax-highlighting<br>
+              直接去github官網下載並放入zshrc中，如下圖:
+              <pre> aplugins=(<br>git<br>zsh-autosuggestions<br>zsh-syntax-highlighting<br>)</pre>
+              維持輸指令列在最下方
+              <pre> printf '\n%.0s' {1..100}</pre>
+              <div style="font-size:larger;font-weight:bolder;text-align:center;">常用簡單指令 :<br></div>
+              變更bash or zsh設定檔
+              <pre> vi ~/.bashrc  or  vi ~/.zshrc  </pre>
+              更新ZHS檔案
+              <pre> source ~/.zshrc </pre>
+              切換bash or zsh
+              <pre> bash 、zsh  </pre>
+              更改成默認 Shell
+              <pre> chsh -s /bin/zsh </pre>
 
-
-              </table>
-          </p>
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+  <ol>
+    <li><a href="https://junyussh.github.io/p/how-to-set-up-oh-my-zsh/  ">https://junyussh.github.io/p/how-to-set-up-oh-my-zsh/  </a></li>
+    <li><a href="https://github.com/iplaces/astro-zsh-theme">https://github.com/iplaces/astro-zsh-theme</a></li>
+    <li><a href="https://github.com/romkatv/powerlevel10k ">https://github.com/romkatv/powerlevel10k </a></li>
+    <li><a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md</a></li>
+    <li><a href=" https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md"> https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md</a></li>
+    </ol>
+                  
 </div>
 </div>
 </div></div>
