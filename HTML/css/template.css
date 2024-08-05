@@ -287,7 +287,7 @@ label{
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.354 5.354A.5.5 0 0 0 9 4.5H3a.5.5 0 0 0-.354.854l3 3a.5.5 0 0 0 .708 0l3-3z' fill='%23000' fill-opacity='.45'/%3E%3C/svg%3E");
 }
 .category details{
-  padding-left: 10px
+  padding-left: 10px;
 }
 .category-item{
   display: flex;
