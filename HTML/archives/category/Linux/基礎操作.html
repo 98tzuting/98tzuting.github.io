@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <!-- 設定所有相對路徑的根 URL (github發佈) -->
+  <base href="https://98tzuting.github.io/project/HTML/">
+  <!-- 設定所有相對路徑的根 URL (內測) -->
+  <!-- <base href="/HTML/"> -->
+  <head>
+    <title>tzuting-notes</title>
+    <!-- 描述HTML文件的元資訊 -->
+    <meta charset="utf-8">
+    <meta name="description" content="作者：劉仔">
+    <meta name="keywords" content="tzuting-notes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <!-- 屏蔽百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-transform"> 
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- 避免HTML页面缓存 -->
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!-- 社群網站平台支援的Open Graph Tagss -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="tzuting-notes">
+    <meta property="og:url" content="https://98tzuting.github.io/project/HTML/Home.html">
+    <meta property="og:description" content="付出不在于多少，只要值得就好">
+    <!-- 載入外部 CSS 樣式表 (stylesheet) -->
+    <link href="css/template.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome的icon -->
+    <script src="https://kit.fontawesome.com/e3859e1300.js" crossorigin="anonymous"></script>
+    <!-- icon 是用來設定網頁 Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/coding_32px_1227803_easyicon.net.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/coding_16px_1227803_easyicon.net.png">
+    <link rel="mask-icon" href="images/logo.svg" color="#222">
+    <link rel="canonical" href="https://98tzuting.github.io/project/HTML/">
+    <!-- loading 動畫 -->
+    <link href="lib/pace-theme-loading-bar.min.css" rel="stylesheet">
+    <script src="js/pace.min.js"></script>
+    <!-- 背景動畫 -->
+    <script type="text/javascript" src="js/dynamic_bg.js"></script>
+    <!-- 無JS插件時的錯誤訊息 -->
+    <noscript>
+      <p>此網頁需要支援 JavaScript 才能正確運行，請先至你的瀏覽器設定中開啟 JavaScript。</p>
+    </noscript>
+  </head>
+  
+<body>
+<!-- 版面位置 -->
+  <div class="all">
+  <div class="bg_content"><canvas id="galaxy"></canvas></div>
+<!-- GitHub Corners (73-77) -->
+  <span>
+    <a href="https://github.com/98tzuting" class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewbox="0 0 250 250" style="fill:#030303; color:rgb(255, 255, 255); position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  </span>
+  <!-- header 標題 -->
+  <header id="header" class="header">
+    <div class="header-inner">
+    <div class="site-brand-wrapper">
+    <div class="site-meta ">
+<!-- 左上角logo -->
+    <div>
+        <a href="Home.html" class="brand" rel="start"><span class="site-title">tzuting-notes</span></a>
+    </div>
+    <p class="site-subtitle">student</p>
+    </div>
+  </div>
+<!-- 頁面小於850px時顯示選單 -->
+<input type="checkbox" name="" id="side-meau-switch" checked>
+  <label for="side-meau-switch">
+    <span class="site-nav-toggle"><i class="fa-solid fa-bars">
+    </i></span></label>
+<!-- meau 列表 -->
+<div class="site-nav">
+  <form>
+    <input type="search" placeholder="請輸入關鍵字">
+    <button><i class="fa fa-search"></i></button>
+  </form>
+  <!-- Home -->
+  <a href="Home.html">
+    <i class="menu-item-icon fa fa-fw fa-home"></i> Home</a>
+  <!-- About -->
+    <a href="about/index.html ">
+        <i class="menu-item-icon fa fa-fw fa-user"></i> About</a>
+  <!-- catalog -->
+    <a href="archives/catalog.html  ">
+        <i class="menu-item-icon fa fa-fw fa-archive"></i> Catalog</a>
+</div>
+<!-- 目錄 -->
+<div class="category" id="category">
+  <details>
+  <summary>
+  <span class="category-item">Linux</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Linux/WSL.html">
+  <i class="fa fa-file-lines"></i> WSL設定</a>
+  </summary>
+  </details>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Linux/基礎操作.html">
+  <i class="fa fa-file-lines"></i> 基礎操作</a>
+  </summary>
+  </details>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Linux/ZSH、Vim.html">
+  <i class="fa fa-file-lines"></i> ZSH、Vim</a>
+  </summary>
+  </details>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Linux/Linux_rsync_(scp).html">
+  <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
+  </summary>
+  </details>
+  </details>
+  <details>
+  <summary>
+  <span class="category-item">vscode</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/vscode/Setting.html">
+  <i class="fa fa-file-lines"></i> 我的VS設置</a>
+  </summary>
+  </details>
+  </details>
+  <details>
+  <summary>
+  <span class="category-item">Git</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Git/learning.html">
+  <i class="fa fa-file-lines"></i> Git 設置與安裝並使用</a>
+  </summary>
+  </details>
+  </details>
+  <details>
+  <summary>
+  <span class="category-item">HEP</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/HEP/about.html">
+  <i class="fa fa-file-lines"></i> 簡介</a>
+  </summary>
+  </details>
+  </details>
+  <details>
+  <summary>
+  <span class="category-item">Root</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/Root/Setting.html">
+  <i class="fa fa-file-lines"></i> 安裝與使用</a>
+  </summary>
+  </details>
+  </details>
+  <details>
+  <summary>
+  <span class="category-item"> HTML</span>
+  </summary>
+  <details>
+  <summary>
+  <a class="file" href="archives/category/HTML/Setting.html">
+  <i class="fa fa-file-lines"></i> 安裝與使用</a>
+  </summary>
+  </details>
+  </details>
+</div>
+</div>
+</header>
+<!-- main --> 
+<main id="main" class="main">
+      <div class="main-inner">
+<!-- 顯示路徑 -->
+<header class="path">
+  <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
+  <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
+    <span class="style" >Linux</span>
+    <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
+    <span class="style" >基礎指令</span>
+</header>
+<div class="content-wrap">
+<!-- 第一篇 文章 -->
+  <div id="content" class="content">
+  <section id="posts" class="posts-expand">
+  <article class="post post-type-normal">
+    <div class="post-block">
+      <header class="post-header">
+            <h1 class="post-title" >Linux &mdash; 基礎指令</h1>
+       <div class="post-meta">
+                <i class="fa fa-calendar-o"> : Posted on</i>
+              <time title="Post created">
+                2022-08-28
+              </time>
+        </div>
+      </header>
+<!-- 內文 -->
+<div class="post-body" itemprop="articleBody">
+          <p>相信各位點進來想必對Linux指令有一點需求<br>像是
+             <strong>ls、mkdir、cd、ssh、scp、cp ……</strong>
+              <br>只需要用過幾次就不會忘記的<em> common sense </em><br>
+              首先要先了解什麼是絕對位置和相對位置<br>
+              通常你的位置會在目錄也就是波浪號<strong> ~ </strong><br>
+              最開始位置為<strong> / </strong><br>
+              有波浪號或是..就是使用相對位置，一個點代表現在位置，兩個點代表上一層<br>
+              絕對位置通常很大一串，像是<strong> /home/使用者/project/test1/justlike.py </strong><br>
+              使用絕對位置會比較麻煩複雜，但在腳本中建議使用絕對位置以免檔案抓不到<br>
+              但一般在Linux處理使用相對位置較快速。<br><br>
+              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
+              <table style="left:0;width: 100%;text-align: center;font-size: large;">
+                <colgroup span="3" style="background-color: rgb(215, 214, 214);"></colgroup>
+                <tr>
+                  <th>指令</th>
+                  <th>作用</th>
+                  <th>備註</th>
+                </tr>
+                <tr>
+                  <td>ls</td>
+                  <td>顯示位置底下的資料</td>
+                  <td>有許多額外的附加條件<br>像是<strong> -a </strong>列出所有項目包括隱藏的<strong> -l </strong>直式列出</td>
+                </tr>
+                <tr>
+                  <td>mkdir</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>cd</td>
+                  <td>移動</td>
+                  <td>後面可接絕對位置或是相對位置</td>
+                </tr>
+                <tr>
+                  <td>ssh</td>
+                  <td>遠端連線</td>
+                  <td>ssh 使用者@IP位置</td>
+                </tr>
+                <tr>
+                  <td>cp</td>
+                  <td>複製</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>scp</td>
+                  <td>遠端複製</td>
+                  <td>rsync 是另一種方式，速度較快可定期備份和壓縮傳輸</td>
+                </tr>
+                <tr>
+                  <td>mv</td>
+                  <td>移動or改名字</td>
+                  <td>移動時後面加路徑，改名字則為文字</td>
+                </tr>
+                <tr>
+                  <td>rm</td>
+                  <td>刪除</td>
+                  <td>加入 -r 可以刪除資料夾 -f 可以強制刪除</td>
+                </tr>
+                <tr>
+                  <td>vi</td>
+                  <td>開啟某檔案</td>
+                  <td>有插件 vim 可以客製化的使用，更方便</td>
+                </tr>
+                <tr>
+                  <td>touch</td>
+                  <td>創建資料夾</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pwd</td>
+                  <td>查看現在位置</td>
+                  <td></td>
+                </tr>
+
+
+              </table>
+          </p>
+</div>
+</div>
+</div></div>
+</article></section>
+<!-- 最下面的頁數 -->
+<nav class="pagination">
+  <span class="page-number"><i class="fa-solid fa-door-open"></i></span>
+  <a class="page-number" href="archives/category/Linux/ZSH、Vim.html">
+  <i class="fa fa-angle-right"></i></a>
+</nav>
+</main></div>
+<!-- 最下方的描述 -->
+<footer id="footer" class="footer">
+  <div class="footer-inner">
+    <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+    <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tzuting</span>
+    &mdash;<a href="mailto:981122@hotmail.com.tw"><span class="theme-link"><i class="fa fa-fw fa-envelope"></i>Email</span></a>
+    &mdash;<a href="https://github.com/98tzuting"><span class="theme-link"><i class="fa fa-fw fa-github"></i>GitHub</span></a>
+    &mdash;<a href="https://www.instagram.com/debug_is_mylife"><span class="theme-link"><i class="fa-brands fa-square-instagram"></i>instagram</span></a>
+    <div class="Reference">Reference :
+    <a class="theme-link" target="_blank" href="https://www.fooish.com/">Fooish</a><span> </span>
+    <a class="theme-link" target="_blank" href="https://github.com/">GitHub</a><span> </span>
+    <a class="theme-link" target="_blank" href="https://code.visualstudio.com/">Vscode</a><span> </span>
+    <a class="theme-link" target="_blank" href="https://git-scm.com/">Git</a>
+    </div>
+    <div class="busuanzi-count">
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span class="site-uv">
+    <i class="fa fa-user"></i> 訪客數
+    <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  <span class="site-pv">
+    <i class="fa fa-eye"></i> 總訪問次數
+    <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+    <p>本網站為作者的學習資料內容，一切的內容都用在學習上， 並不會使用於商業行為。若網頁內容方面有任何不小心的侵權，還請與作者聯繫，我們會盡快撤除的。</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

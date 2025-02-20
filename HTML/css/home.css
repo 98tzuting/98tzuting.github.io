@@ -1,0 +1,127 @@
+/* Home page */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* font-family: 'Noto Sans TC', sans-serif; */
+}
+.bg_content {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+body {
+  background: url("https://98tzuting.github.io/project/HTML/images/homebkg.jpg")
+    no-repeat center bottom;
+  background-blend-mode: multiply;
+  background-size: Cover;
+  background-attachment: fixed;
+}
+a {
+  background-color: transparent;
+  word-break:break-all;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+.header {
+  max-height: 20%;
+  font-size: 70px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(251, 227, 106);
+}
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner {
+    display: none !important;
+  }
+}
+.all {
+  width: 100%;
+  height: auto;
+  margin: 0 0;
+  display: inline-block;
+}
+.halfleft,
+.halfright {
+  float: left;
+  width: 50%;
+  height: 70%;
+  display: block;
+}
+.img {
+  margin-top: 20px;
+  margin-left: 5%;
+  background-color: rgb(24, 16, 96);
+  border: 5px #2e7ac4;
+  box-sizing: border-box;
+  border-style: double;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 40px;
+  text-align: center;
+  color: #0f8ba7;
+}
+.im {
+  font-size: 55px;
+  color: #50f0f9;
+}
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  min-height: 50px;
+  font-size: 10px;
+  color: #999;
+}
+.footer-inner {
+  box-sizing: border-box;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+}
+@media (min-width: 1600px) {
+  .footer-inner {
+    width: 900px;
+  }
+}
+.theme-link {
+  color: #00c47d;
+}
+
+
+pre {
+  word-break:break-all;
+}
