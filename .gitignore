@@ -20,3 +20,19 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+**/.git
+**/.svn
+**/.hg
+**/CVS
+**/.DS_Store
+**/Thumbs.db
+**/.cache
+**/.oh-my*
+**/.sudo*
+**/.vim*
+**/.zsh_*
+**/.ssh
+**/.vs*
+**/.zshrc
+**/.gitignore
