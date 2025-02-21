@@ -36,3 +36,5 @@ TestResults.xml
 **/.vs*
 **/.zshrc
 **/.gitignore
+**/.gitconfig
+**/.zcom*
