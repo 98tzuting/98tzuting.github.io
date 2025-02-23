@@ -192,102 +192,126 @@
 </header>
 <!-- main --> 
 <main id="main" class="main">
-      <div class="main-inner">
+    <div class="main-inner">
 <!-- 顯示路徑 -->
 <header class="path">
-  <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
+<a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
+<span class="style"><i class="fa-solid fa-arrow-right"></i></span>
+  <span class="style" >SCM</span>
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-  <a class="style" href="archives/root/Setting.html">root</a>
+  <span class="style" >研究報告</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
-  <div id="content" class="content">
-  <section id="posts" class="posts-expand">
-  <article class="post post-type-normal">
-    <div class="post-block">
-      <header class="post-header">
-            <h1 class="post-title" >Root 設置與安裝並使用</h1>
-       <div class="post-meta">
-                <i class="fa fa-calendar-o"> : Posted on</i>
-              <time title="Post created">
-                2024-08-06
-              </time>
-        </div>
-      </header>
+<div id="content" class="content">
+<section id="posts" class="posts-expand">
+<article class="post post-type-normal">
+  <div class="post-block">
+    <header class="post-header">
+          <h1 class="post-title" >研究報告</h1>
+     <div class="post-meta">
+              <i class="fa fa-calendar-o"> : Posted on</i>
+            <time title="Post created">
+              2024-12-15
+            </time>
+      </div>
+    </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>CERN Root 是以 C++ 為基礎的資料分析套件，常用於高能分析與畫圖的套件。 <br>
-          </p><p><strong> 主要以數據轉化成圖像分析 </strong></p>
-              首先還是需要下載下載XLaunch到電腦 (<a href="https://sourceforge.net/projects/vcxsrv/"> https://sourceforge.net/projects/vcxsrv/</a> )<br>
-              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
-              在.bshrc或.zshrc 裡增加export DISPLAY=:0.0   #增加完記得更新source ~/.bshrc 或 source ~/.zshrc<br>
-              打開Xlaunch (不需改變任何東西，一直執行即可) <br>
-              下載xeyes : sudo apt-get install x11-apps   <br>
-              Ubuntu裡執行echo export DISPLAY=:0.0    #可用xeyes看有沒有眼睛，有表示成功 <br> <br>
-              <strong>下載 CERN ROOT</strong> (https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions )   #若無法安裝可查詢錯誤訊息中缺少的下載sudo apt-get install 等等
-              <pre>sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \ libxft-dev libxext-dev python libssl-dev </pre>
-              查看WSL版本 (查版本wsl --list -v) #要在PowerShell裡執行 <br>
-              下載要使用的root需對應ubuntu版本(查版本: lsb_release -a  ):   <br>
-              #最新的可能有bug會系統公告，不要用最新的 <br>
-              <pre>wget https://root.cern/download/root_v6.26.00.source.tar.gz . </pre><br>
-              
-              解壓縮至~: <pre> tar -xzvf root_v6.26.04.source.tar.gz</pre><br>
-              執行裡面的檔案: <pre>source root/bin/thisroot.sh </pre><br>
-              #可在b shell或z shell加入重新啟動時可免重新下載 <br>
-              輸入root即可進入，再輸入<pre>TBrowser s </pre> 可在Ubuntu打開Xlaunch <br>
-              #若顯示libtiff.so.5:cannot open shared object flie 則表示缺少東西，再補充下載下面的東西 
+        <p>Git常用來保存與備份，以免檔案流失，通常會用腳本去自動執行 <br>
+        </p><p><strong> 切記數據都要先下載再開始作業以免檔案重疊被覆蓋 </strong></p>
+            首先還是需要下載，分為下載ZSH、下載oh-my-zsh、更改主題、設置簡單alias、下載插件plugins<br>
+            <strong>這裡我使用為Ubuntu 來做示範，WSL遠端Ubuntu內建已有Git </strong><br>
+            若在本機則需要下載Git至本機+設定<br> <br>
+            
+            <div style="font-size:larger;font-weight:bolder;text-align:center;">前置作業設定識別資料 :<br></div>
+            設定帳戶，讓 Git 知道電腦做的修改要連結到哪位使用者，建議跟Emailㄧ致的帳號 
+            <pre> git config --global user.name "<Your Name>" </pre>
+            設定Git-Email 
+            <pre> git config --global user.email "<your@gmail.com>" </pre>
+            初始化git
+            <pre> git init </pre>
+            初始提交基本東西
+            <pre> git commit -m "Initial Commit"</pre>
+            設定推送地點
+            <pre> git remote add origin ssh://git@.......</pre>
+            設定推送分支
+            <pre> git push -u origin master</pre>
+            再次查看狀態
+            <pre> git status </pre>
 
-              <br>
-              <strong>Liunx Cern root</strong><br>
-              <pre>sudo snap install root-framework </pre><br><br>
-              
+            <div style="font-size:larger;font-weight:bolder;text-align:center;">使用git發佈順序 :<br></div>
+            查看狀態
+            <pre> git status </pre>
+            新增要推送的檔案
+            <pre> git add . 與  git add --all 相同</pre>
+            推送版本訊息
+            <pre> git commit -m "版本訊息(時間或是人物名稱master)"</pre>
+            推送至Git
+            <pre> git push</pre>
+            再次查看狀態
+            <pre> git status </pre>
 
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
-  <ol>
-    <li><a href="https://sourceforge.net/projects/vcxsrv/">XLaunch:https://sourceforge.net/projects/vcxsrv/</a></li>
-    <li><a href="https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions">CERN Root:https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions</a></li>
-    <li><a href="https://root.cern/for_developers/root7/">ROOT7:https://root.cern/for_developers/root7/</a></li>
-    </ol>
-                  
+            <div style="font-size:larger;font-weight:bolder;text-align:center;">忽略的文件 gitignore :<br></div>
+            忽略的文件 gitignore 
+            bin匹配任何名為“bin”的文件或目錄。<br>
+            bin/匹配任何名為“bin”的目錄，這實際上意味著它的所有內容，因為 Git 不會單獨跟踪目錄。<br>
+            bin/*直接匹配 any 中的所有文件和目錄bin/。這可以防止 Git 自動在其子目錄中查找任何文件，但如果bin/foo創建了子目錄，則此規則將不匹配foo的內容。<br>
+            bin/**匹配任何bin/目錄及其所有子目錄中的所有文件和目錄。<br>
+
+            <strong>github 差不多方式，一樣金鑰放入github即可</strong>
+            <br>
+
+
+<div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+<ol>
+  <li><a href="https://git-scm.com/book/zh/v2  ">Git 官網 https://git-scm.com/book/zh/v2  </a></li>
+  <li><a href="https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/">https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/</a></li>
+  <li><a href="https://ithelp.ithome.com.tw/m/articles/10271152  ">https://ithelp.ithome.com.tw/m/articles/10271152  </a></li>
+  <li><a href="https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  ">https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  </a></li>
+  </ol>
+                
 </div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
+<span class="page-number"><i class="fa-solid fa-door-open"></i> 2</span>
+<!-- <a class="page-number" href="archives/category/SCM/Project.html">
+<i class="fa fa-angle-right"></i></a> -->
 </nav>
 </main></div>
 <!-- 最下方的描述 -->
 <footer id="footer" class="footer">
-  <div class="footer-inner">
-    <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-    <i class="fa fa-user"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Tzuting</span>
-    &mdash;<a href="mailto:981122@hotmail.com.tw"><span class="theme-link"><i class="fa fa-fw fa-envelope"></i>Email</span></a>
-    &mdash;<a href="https://github.com/98tzuting"><span class="theme-link"><i class="fa fa-fw fa-github"></i>GitHub</span></a>
-    &mdash;<a href="https://www.instagram.com/debug_is_mylife"><span class="theme-link"><i class="fa-brands fa-square-instagram"></i>instagram</span></a>
-    <div class="Reference">Reference :
-    <a class="theme-link" target="_blank" href="https://www.fooish.com/">Fooish</a><span> </span>
-    <a class="theme-link" target="_blank" href="https://github.com/">GitHub</a><span> </span>
-    <a class="theme-link" target="_blank" href="https://code.visualstudio.com/">Vscode</a><span> </span>
-    <a class="theme-link" target="_blank" href="https://git-scm.com/">Git</a>
-    </div>
-    <div class="busuanzi-count">
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <span class="site-uv">
-    <i class="fa fa-user"></i> 訪客數
-    <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  <span class="site-pv">
-    <i class="fa fa-eye"></i> 總訪問次數
-    <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-    <p>本網站為作者的學習資料內容，一切的內容都用在學習上， 並不會使用於商業行為。若網頁內容方面有任何不小心的侵權，還請與作者聯繫，我們會盡快撤除的。</p>
-    </div>
+<div class="footer-inner">
+  <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+  <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tzuting</span>
+  &mdash;<a href="mailto:981122@hotmail.com.tw"><span class="theme-link"><i class="fa fa-fw fa-envelope"></i>Email</span></a>
+  &mdash;<a href="https://github.com/98tzuting"><span class="theme-link"><i class="fa fa-fw fa-github"></i>GitHub</span></a>
+  &mdash;<a href="https://www.instagram.com/debug_is_mylife"><span class="theme-link"><i class="fa-brands fa-square-instagram"></i>instagram</span></a>
+  <div class="Reference">Reference :
+  <a class="theme-link" target="_blank" href="https://www.fooish.com/">Fooish</a><span> </span>
+  <a class="theme-link" target="_blank" href="https://github.com/">GitHub</a><span> </span>
+  <a class="theme-link" target="_blank" href="https://code.visualstudio.com/">Vscode</a><span> </span>
+  <a class="theme-link" target="_blank" href="https://git-scm.com/">Git</a>
   </div>
+  <div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span class="site-uv">
+  <i class="fa fa-user"></i> 訪客數
+  <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+  </span>
+<span class="site-pv">
+  <i class="fa fa-eye"></i> 總訪問次數
+  <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+  </span>
+  <p>本網站為作者的學習資料內容，一切的內容都用在學習上， 並不會使用於商業行為。若網頁內容方面有任何不小心的侵權，還請與作者聯繫，我們會盡快撤除的。</p>
+  </div>
+</div>
 </footer>
 </body>
 </html>

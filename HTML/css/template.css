@@ -478,3 +478,8 @@ td{
   background: rgb(255, 255, 255);
   border-top-color: #ccc;
 }
+hr {
+  border: none;
+  border-top: 3px dashed #000; /* Dashed line, adjust color if needed */
+  margin: 10px 0; /* Spacing above and below */
+}
