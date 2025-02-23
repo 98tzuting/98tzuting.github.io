@@ -197,7 +197,9 @@
 <header class="path">
   <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-  <a class="style" href="archives/catalog.html">catalog</a>
+    <span class="style" >Git</span>
+    <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
+    <span class="style" >Git 設置與安裝並使用</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
@@ -206,56 +208,84 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >Catalog</h1>
+            <h1 class="post-title" >Git 設置與安裝並使用</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2024-08-04
+                2022-09-15
               </time>
         </div>
       </header>
 <!-- 內文 -->
-<section id="section1">
-  <a class="style"><h2><i class="fa-solid fa-circle"></i> Git</h2></a>
-  <a class="style" href="archives/category/Linux/learning.html"><h2><p>&emsp;&emsp;learing</p></h2></a>
-</section>
+<div class="post-body" itemprop="articleBody">
+          <p>Git常用來保存與備份，以免檔案流失，通常會用腳本去自動執行 <br>
+          </p><p><strong> 切記數據都要先下載再開始作業以免檔案重疊被覆蓋 </strong></p>
+              首先還是需要下載，分為下載ZSH、下載oh-my-zsh、更改主題、設置簡單alias、下載插件plugins<br>
+              <strong>這裡我使用為Ubuntu 來做示範，WSL遠端Ubuntu內建已有Git </strong><br>
+              若在本機則需要下載Git至本機+設定<br> <br>
+              
+              <div style="font-size:larger;font-weight:bolder;text-align:center;">前置作業設定識別資料 :<br></div>
+              設定帳戶，讓 Git 知道電腦做的修改要連結到哪位使用者，建議跟Emailㄧ致的帳號 
+              <pre> git config --global user.name "<Your Name>" </pre>
+              設定Git-Email 
+              <pre> git config --global user.email "<your@gmail.com>" </pre>
+              初始化git
+              <pre> git init </pre>
+              初始提交基本東西
+              <pre> git commit -m "Initial Commit"</pre>
+              設定推送地點
+              <pre> git remote add origin ssh://git@.......</pre>
+              設定推送分支
+              <pre> git push -u origin master</pre>
+              再次查看狀態
+              <pre> git status </pre>
 
-<section id="section2">
-  <a class="style" href="archives/category/HEP/about.html"><h2><i class="fa-solid fa-circle"></i> HEP</h2></a>
-</section>
+              <div style="font-size:larger;font-weight:bolder;text-align:center;">使用git發佈順序 :<br></div>
+              查看狀態
+              <pre> git status </pre>
+              新增要推送的檔案
+              <pre> git add . 與  git add --all 相同</pre>
+              推送版本訊息
+              <pre> git commit -m "版本訊息(時間或是人物名稱master)"</pre>
+              推送至Git
+              <pre> git push</pre>
+              再次查看狀態
+              <pre> git status </pre>
 
-<section id="section3">
-  <a class="style" href="archives/category/HTML/about.html"><h2><i class="fa-solid fa-circle"></i> HTML</h2></a>
-</section>
+              <div style="font-size:larger;font-weight:bolder;text-align:center;">忽略的文件 gitignore :<br></div>
+              忽略的文件 gitignore 
+              bin匹配任何名為“bin”的文件或目錄。<br>
+              bin/匹配任何名為“bin”的目錄，這實際上意味著它的所有內容，因為 Git 不會單獨跟踪目錄。<br>
+              bin/*直接匹配 any 中的所有文件和目錄bin/。這可以防止 Git 自動在其子目錄中查找任何文件，但如果bin/foo創建了子目錄，則此規則將不匹配foo的內容。<br>
+              bin/**匹配任何bin/目錄及其所有子目錄中的所有文件和目錄。<br>
 
-<section id="section4">
-  <a class="style" href="archives/category/Linux/Git&GitHub.html"><h2><i class="fa-solid fa-circle"></i> Linux</h2></a>
-  <a class="style" href="archives/category/Linux/Git&GitHub.html"><p>&emsp;&emsp;Git&GitHub</p></a>
-  <a class="style" href="archives/category/Linux/Linux_rsync_(scp).html"><p>&emsp;&emsp;Linux_rsync_(scp)</p></a>
-  <a class="style" href="archives/category/Linux/WSL.html"><p>&emsp;&emsp;WSL</p></a>
-  <a class="style" href="archives/category/Linux/ZSH、Vim.html"><p>&emsp;&emsp;ZSH、Vim</p></a>
-  <a class="style" href="archives/category/Linux/基礎操作.html"><p>&emsp;&emsp;基礎操作</p></a>
-</section>
-<section id="section5">
-  <a class="style" href="archives/category/root/Setting.html"><h2><i class="fa-solid fa-circle"></i> root</h2></a>
-</section>
-<section id="section6">
-  <a class="style" href="archives/category/vscode/Setting.html"><h2><i class="fa-solid fa-circle"></i> vscode</h2></a>
-</section>
+              <strong>github 差不多方式，一樣金鑰放入github即可</strong>
+              <br>
+
+
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+  <ol>
+    <li><a href="https://git-scm.com/book/zh/v2  ">Git 官網 https://git-scm.com/book/zh/v2  </a></li>
+    <li><a href="https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/">https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/</a></li>
+    <li><a href="https://ithelp.ithome.com.tw/m/articles/10271152  ">https://ithelp.ithome.com.tw/m/articles/10271152  </a></li>
+    <li><a href="https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  ">https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  </a></li>
+    </ol>
+                  
+</div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
-  <!-- <a class="page-number" href="archives/category/Git/learning.html"> -->
-  <!-- <i class="fa fa-angle-right"></i></a> -->
+  <span class="page-number"><i class="fa-solid fa-door-open"></i></span>
+  <a class="page-number" href="archives/category/HEP/about.html">
+  <i class="fa fa-angle-right"></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->
 <footer id="footer" class="footer">
   <div class="footer-inner">
-    <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+    <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
     <i class="fa fa-user"></i>
     </span>

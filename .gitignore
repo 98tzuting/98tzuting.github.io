@@ -38,3 +38,4 @@ TestResults.xml
 **/.gitignore
 **/.gitconfig
 **/.zcom*
+**/.wget-hsts
