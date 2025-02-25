@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="tzuting-notes">
     <meta property="og:url" content="https://98tzuting.github.io/HTML/Home.html">
-    <meta property="og:description" content="付出不在于多少，只要值得就好">
+    <meta property="og:description" content="Just do it">
     <!-- 載入外部 CSS 樣式表 (stylesheet) -->
     <link href="css/template.css" rel="stylesheet" type="text/css">
     <!-- Font Awesome的icon -->
@@ -218,57 +218,87 @@
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>Git常用來保存與備份，以免檔案流失，通常會用腳本去自動執行 <br>
-          </p><p><strong> 切記數據都要先下載再開始作業以免檔案重疊被覆蓋 </strong></p>
-              首先還是需要下載，分為下載ZSH、下載oh-my-zsh、更改主題、設置簡單alias、下載插件plugins<br>
-              <strong>這裡我使用為Ubuntu 來做示範，WSL遠端Ubuntu內建已有Git </strong><br>
-              若在本機則需要下載Git至本機+設定<br> <br>
-              
-              <div style="font-size:larger;font-weight:bolder;text-align:center;">前置作業設定識別資料 :<br></div>
-              設定帳戶，讓 Git 知道電腦做的修改要連結到哪位使用者，建議跟Emailㄧ致的帳號 
-              <pre> git config --global user.name "<Your Name>" </pre>
-              設定Git-Email 
-              <pre> git config --global user.email "<your@gmail.com>" </pre>
-              初始化git
-              <pre> git init </pre>
-              初始提交基本東西
-              <pre> git commit -m "Initial Commit"</pre>
-              設定推送地點
-              <pre> git remote add origin ssh://git@.......</pre>
-              設定推送分支
-              <pre> git push -u origin master</pre>
-              再次查看狀態
-              <pre> git status </pre>
+  <h1>簡介</h1>
+  <p>SCM（Scanning Conductance Microscopy）是一種掃描探針顯微術，主要用於檢測材料的電導性和表面特性。
+    雖然SCM的具體原理在提供的搜索結果中沒有明確提及，但它與其他掃描探針顯微術（如AFM）有相似的技術基礎。 </p>
+  <h1>原理</h1>
+  <p>SCM通常利用一根尖細的探針與樣品表面接觸或近距離掃描，以測量樣品的電導性和表面特性。
+    這種技術可以在奈米尺度上檢測材料的電性變化，尤其適合於檢測導體和半導體材料的表面特性。
+    與AFM相似，SCM也能在不同環境中操作，如真空、氣體或液體環境。然而，SCM的主要目的是測量電導性和電流變化，而非僅僅檢測表面形貌。
+    SCM的應用範圍包括半導體材料的檢測、奈米結構的製造等領域。</p>
+  <h1>SCM操作步驟</h1>
+  <div class="flowchart">
+    <div class="step">裝載SCM模組</div>
+    <div class="arrow"></div>
+    <div class="step">針座裝針</div>
+    <div class="arrow"></div>
+    <div class="step">將針座裝置於Burker</div>
+    <div class="arrow"></div>
+    <div class="step">開啟電腦的量測系統Nanoscope</div>
+    <div class="arrow"></div>
+    <div class="step">選擇電性量測</div>
+    <div class="arrow"></div>
+    <div class="step">使用雷射對準針頭</div>
+    <div class="arrow"></div>
+    <div class="step">調整針頭的焦距</div>
+    <div class="arrow"></div>
+    <div class="step">對準四象限</div>
+    <div class="arrow"></div>
+    <div class="step">放置樣品並使用導航(Navigate)功能尋找樣品邊界</div>
+    <div class="arrow"></div>
+    <div class="step">設定參數</div>
+</div>
+<style>.table-container {
+  text-align: center;
+}
 
-              <div style="font-size:larger;font-weight:bolder;text-align:center;">使用git發佈順序 :<br></div>
-              查看狀態
-              <pre> git status </pre>
-              新增要推送的檔案
-              <pre> git add . 與  git add --all 相同</pre>
-              推送版本訊息
-              <pre> git commit -m "版本訊息(時間或是人物名稱master)"</pre>
-              推送至Git
-              <pre> git push</pre>
-              再次查看狀態
-              <pre> git status </pre>
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
 
-              <div style="font-size:larger;font-weight:bolder;text-align:center;">忽略的文件 gitignore :<br></div>
-              忽略的文件 gitignore 
-              bin匹配任何名為“bin”的文件或目錄。<br>
-              bin/匹配任何名為“bin”的目錄，這實際上意味著它的所有內容，因為 Git 不會單獨跟踪目錄。<br>
-              bin/*直接匹配 any 中的所有文件和目錄bin/。這可以防止 Git 自動在其子目錄中查找任何文件，但如果bin/foo創建了子目錄，則此規則將不匹配foo的內容。<br>
-              bin/**匹配任何bin/目錄及其所有子目錄中的所有文件和目錄。<br>
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}</style>
 
-              <strong>github 差不多方式，一樣金鑰放入github即可</strong>
-              <br>
+  <h1>參數設定表</h1>
+  <table border="1">
+      <tr>
+          <th>參數</th>
+          <th>設定值</th>
+      </tr>
+      <tr>
+          <td>掃描方向</td>
+          <td>90度</td>
+      </tr>
+      <tr>
+          <td>解析度</td>
+          <td>512x256 px </td>
+      </tr>
+      <tr>
+          <td>下針力道 (Setpoint)</td>
+          <td>0.1V</td>
+      </tr>
+      <tr>
+          <td>頻率</td>
+          <td>100K</td>
+      </tr>
+      <tr>
+          <td>相位</td>
+          <td>-90度</td>
+      </tr>
+  </table>
+  
+  <p>下針後，需添加調制電壓AC。</p>
+
+<br>
 
 
   <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
   <ol>
-    <li><a href="https://git-scm.com/book/zh/v2  ">Git 官網 https://git-scm.com/book/zh/v2  </a></li>
-    <li><a href="https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/">https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/</a></li>
-    <li><a href="https://ithelp.ithome.com.tw/m/articles/10271152  ">https://ithelp.ithome.com.tw/m/articles/10271152  </a></li>
-    <li><a href="https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  ">https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  </a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Scanning_ion-conductance_microscopy">SCM wiki</a></li>
+    <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/table">HTML Table文獻</a></li>
     </ol>
                   
 </div>

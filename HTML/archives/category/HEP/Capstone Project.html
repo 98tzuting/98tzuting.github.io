@@ -182,7 +182,7 @@
     <details>
       <summary>
         <a class="file" href="archives/category/HTML/Setting.html">
-          <i class="fa fa-file-lines"></i> 設置</a>
+          <i class="fa fa-file-lines"></i> 簡介</a>
       </summary>
     </details>
 
@@ -208,7 +208,7 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >簡介</h1>
+            <h1 class="post-title" >Capstone Project</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
@@ -218,20 +218,28 @@
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>HEP 是high energy physics 中文是高能物理<br>
-          </p><p>我是以前在<strong> BelleII </strong>分析的專題生</p><br>
-          除了日本的BelleII也有歐洲有名的LHC的組織<br>
-          目前都在使用belleII的數據庫，從產生到篩選再到分析<br>
-          有興趣的都可以找的到官方資料，除了數據分析，還有一部分的人是做偵測器。<br>
-          高能物理是粒子物理，觀察e<sup>+ </sup>e<sup>- </sup>大型粒子堆撞後，經由偵測器所偵測的數據在做分析。<br>
-              <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為官方偵測器的圖片 :<br></div>
-              <img class="text-center" src="images/SuperKEKB-BelleII_thumbnail.jpg"
-              alt="SuperKEKB-BelleII_thumbnail">
+          <p>首先是模擬分析，利用蒙地卡羅方法(Monte Carlo method)去重建(Reconstruction)，這些數據是Mdst.root。<br>
+          先產生大量事件，此事件是我們所需要衰變的分支(DecayTable)，利用官方給的衰變分枝比去寫Python，先假設衰變分之比是100%衰變<br>
+          再利用這些龐大的數據丟去篩選程式(Skimming code)，會產生我們所需要的數據(udst.root)，也是我們想要的原始數據，
+          可能是偵測器的參數調整動能或是粒子的編號(PDG)要正確，還有粒子質量的範圍等等，這些都是可篩選的參數。<br>
+          在經過物理分析後再產生更大集合(Ntuple.root)，因為衰變可能是<strong>幾億分之一</strong>，不產生更大量數據會
+          無法產生我們想要的粒子，這些集合可能跑500億，這些數據不可能在本機完成，一定是利用遠端KEK的超級電腦完成，也就是說要丟程式碼
+          給日本伺服器運行才跑得動。<br>
+          上述都是模擬分析，與實際KEK數據完全無關，這些只能證明說理論上要有這些粒子。<br>
+          但現實中(Nature)中，每天KEK會一直粒子對撞而產生數據，而這些數據要與我們模擬的方式一樣進行，經過同樣的篩選程式(Skimming code)，
+          才會是現實中存在的粒子，這最後步驟我們稱開箱(Open Data)，當然這龐大的數據也是KEK伺服器完成。<br>
+          官方也有許多教程與文獻，大多都需要申請帳號才能查閱，但也很佛心也有公開的 <a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a> 。<br>
+          </p>    
+          <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為前人所做的流程圖片 :<br></div>
+          <img class="text-center" src="images/BelleIIAnalysisModel.svg" alt="Belle II Analysis Models">
               
-              <br>
+          <br>
   <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
   <ol>
-    <li><a href="https://software.belle2.org/sphinx/release-06-00-03">https://software.belle2.org/sphinx/release-06-00-03 </a></li>
+    <li><a href="
+      https://indico.fnal.gov/event/23628/contributions/241330/attachments/154947/201676/BelleIIAnalysisModel.pdf ">
+      Belle II Analysis Models  </a></li>
+    <li><a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a></li>
     <li><a href="https://www.belle2.org/">https://belle.kek.jp/</a></li>
     </ol>
                   
