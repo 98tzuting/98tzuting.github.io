@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="tzuting-notes">
     <meta property="og:url" content="https://98tzuting.github.io/HTML/Home.html">
-    <meta property="og:description" content="付出不在于多少，只要值得就好">
+    <meta property="og:description" content="Just do it">
     <!-- 載入外部 CSS 樣式表 (stylesheet) -->
     <link href="css/template.css" rel="stylesheet" type="text/css">
     <!-- Font Awesome的icon -->
@@ -212,64 +212,27 @@
      <div class="post-meta">
               <i class="fa fa-calendar-o"> : Posted on</i>
             <time title="Post created">
-              2024-12-15
+              2024-12-20
             </time>
       </div>
     </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-        <p>Git常用來保存與備份，以免檔案流失，通常會用腳本去自動執行 <br>
-        </p><p><strong> 切記數據都要先下載再開始作業以免檔案重疊被覆蓋 </strong></p>
-            首先還是需要下載，分為下載ZSH、下載oh-my-zsh、更改主題、設置簡單alias、下載插件plugins<br>
-            <strong>這裡我使用為Ubuntu 來做示範，WSL遠端Ubuntu內建已有Git </strong><br>
-            若在本機則需要下載Git至本機+設定<br> <br>
-            
-            <div style="font-size:larger;font-weight:bolder;text-align:center;">前置作業設定識別資料 :<br></div>
-            設定帳戶，讓 Git 知道電腦做的修改要連結到哪位使用者，建議跟Emailㄧ致的帳號 
-            <pre> git config --global user.name "<Your Name>" </pre>
-            設定Git-Email 
-            <pre> git config --global user.email "<your@gmail.com>" </pre>
-            初始化git
-            <pre> git init </pre>
-            初始提交基本東西
-            <pre> git commit -m "Initial Commit"</pre>
-            設定推送地點
-            <pre> git remote add origin ssh://git@.......</pre>
-            設定推送分支
-            <pre> git push -u origin master</pre>
-            再次查看狀態
-            <pre> git status </pre>
-
-            <div style="font-size:larger;font-weight:bolder;text-align:center;">使用git發佈順序 :<br></div>
-            查看狀態
-            <pre> git status </pre>
-            新增要推送的檔案
-            <pre> git add . 與  git add --all 相同</pre>
-            推送版本訊息
-            <pre> git commit -m "版本訊息(時間或是人物名稱master)"</pre>
-            推送至Git
-            <pre> git push</pre>
-            再次查看狀態
-            <pre> git status </pre>
-
-            <div style="font-size:larger;font-weight:bolder;text-align:center;">忽略的文件 gitignore :<br></div>
-            忽略的文件 gitignore 
-            bin匹配任何名為“bin”的文件或目錄。<br>
-            bin/匹配任何名為“bin”的目錄，這實際上意味著它的所有內容，因為 Git 不會單獨跟踪目錄。<br>
-            bin/*直接匹配 any 中的所有文件和目錄bin/。這可以防止 Git 自動在其子目錄中查找任何文件，但如果bin/foo創建了子目錄，則此規則將不匹配foo的內容。<br>
-            bin/**匹配任何bin/目錄及其所有子目錄中的所有文件和目錄。<br>
-
-            <strong>github 差不多方式，一樣金鑰放入github即可</strong>
-            <br>
-
-
-<div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+  <h1>第一部分：背電極在MOS結構中的影響</h1>
+  <p>本研究的第一部分關注於背電極在MOS結構中對半導體訊號的影響。通過在Ag與基板之間利用微波退火形成矽化銀，從而形成半導體結構。這種結構使得SCM微分電容訊號的來源主要是歐姆接觸的阻抗，而減少了金屬與基板之間的蕭克基（Schottky）接觸的阻抗。結果是測出的微分電容訊號增加。</p>
+  
+  <h1>第二部分：調制電壓對P-N接面位置的影響</h1>
+  <p>第二部分的研究探討了背電極在穩定接觸下，P-N接面位置是否會隨調制電壓的改變而變化。根據之前的文獻，當調制電壓提高時，測出的接面位置也會跟著上升。然而，在兩邊具有相同功函數的共接電壓下，可以形成接面位置不隨調制電壓改變的狀態。</p>
+  
+  <h1>結論 :</h1>
+  <p>本研究通過對背電極在MOS結構中的影響以及調制電壓對P-N接面位置的影響進行深入探討，為半導體材料的電性特性分析提供了新的見解。</p>
+  <!-- <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
 <ol>
   <li><a href="https://git-scm.com/book/zh/v2  ">Git 官網 https://git-scm.com/book/zh/v2  </a></li>
   <li><a href="https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/">https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/</a></li>
   <li><a href="https://ithelp.ithome.com.tw/m/articles/10271152  ">https://ithelp.ithome.com.tw/m/articles/10271152  </a></li>
   <li><a href="https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  ">https://stackoverflow.com/questions/8783093/gitignore-syntax-bin-vs-bin-vs-bin-vs-bin  </a></li>
-  </ol>
+  </ol> -->
                 
 </div>
 </div>

@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="tzuting-notes">
     <meta property="og:url" content="https://98tzuting.github.io/HTML/Home.html">
-    <meta property="og:description" content="付出不在于多少，只要值得就好">
+    <meta property="og:description" content="Just do it">
     <!-- 載入外部 CSS 樣式表 (stylesheet) -->
     <link href="css/template.css" rel="stylesheet" type="text/css">
     <!-- Font Awesome的icon -->
@@ -206,7 +206,7 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >VScode 設置與安裝並使用</h1>
+            <h1 class="post-title" >設置</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
@@ -216,37 +216,119 @@
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>CERN Root 是以 C++ 為基礎的資料分析套件，常用於高能分析與畫圖的套件。 <br>
-          </p><p><strong> 主要以數據轉化成圖像分析 </strong></p>
-              首先還是需要下載下載XLaunch到電腦 (<a href="https://sourceforge.net/projects/vcxsrv/"> https://sourceforge.net/projects/vcxsrv/</a> )<br>
-              <strong>這裡我使用為Ubuntu 來做示範</strong><br>
-              在.bshrc或.zshrc 裡增加export DISPLAY=:0.0   #增加完記得更新source ~/.bshrc 或 source ~/.zshrc<br>
-              打開Xlaunch (不需改變任何東西，一直執行即可) <br>
-              下載xeyes : sudo apt-get install x11-apps   <br>
-              Ubuntu裡執行echo export DISPLAY=:0.0    #可用xeyes看有沒有眼睛，有表示成功 <br> <br>
-              <strong>下載 CERN ROOT</strong> (https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions )   #若無法安裝可查詢錯誤訊息中缺少的下載sudo apt-get install 等等
-              <pre>sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \ libxft-dev libxext-dev python libssl-dev </pre>
-              查看WSL版本 (查版本wsl --list -v) #要在PowerShell裡執行 <br>
-              下載要使用的root需對應ubuntu版本(查版本: lsb_release -a  ):   <br>
-              #最新的可能有bug會系統公告，不要用最新的 <br>
-              <pre>wget https://root.cern/download/root_v6.26.00.source.tar.gz . </pre><br>
-              
-              解壓縮至~: <pre> tar -xzvf root_v6.26.04.source.tar.gz</pre><br>
-              執行裡面的檔案: <pre>source root/bin/thisroot.sh </pre><br>
-              #可在b shell或z shell加入重新啟動時可免重新下載 <br>
-              輸入root即可進入，再輸入<pre>TBrowser s </pre> 可在Ubuntu打開Xlaunch <br>
-              #若顯示libtiff.so.5:cannot open shared object flie 則表示缺少東西，再補充下載下面的東西 
 
-              <br>
-              <strong>Liunx Cern root</strong><br>
-              <pre>sudo snap install root-framework </pre><br><br>
-              
-
+  <h2>VSCode 設定</h2>
+  
+  <p>在 VSCode 中，可以透過設定檔來隱藏不必要的資料，讓檔案列表看起來更整潔。例如，以下設定可以隱藏 `.vscode-server`、`.dbus` 和 `.shell.pre-oh-my-zsh` 資料夾：</p>
+  
+  <pre>
+  "files.exclude": {
+      ".vscode-server": true,
+      "**/.dbus": true,
+      "**/.shell.pre-oh-my-zsh": true,
+  }
+  </pre>
+  
+  <p>另外，對於 C++ 的環境設定，可以使用以下設定來執行程式碼：</p>
+  
+  <pre>
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.fileDirectoryAsCwd": true,
+  "code-runner.executorMap": {
+      "cpp": "g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt && echo '\n' "
+  }
+  </pre>
+  
+  <h2>C 語言學習筆記</h2>
+  
+  <h3>字串比較的三種方法</h3>
+  
+  <p>在 C 語言中，比較兩個字串的方法之一是使用 `strcmp()` 函數。以下是範例程式碼：</p>
+  
+  <pre>
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+  
+  int main() {
+      char str1[] = "Hello";
+      char str2[] = "Hello";
+  
+      if (strcmp(str1, str2) == 0) {
+          printf("equal\n");
+      } else {
+          printf("not equal\n");
+      }
+  
+      return 0;
+  }
+  </pre>
+  
+  <p>來源：<a href="https://shengyu7697.github.io/cpp-string-compare/">https://shengyu7697.github.io/cpp-string-compare/</a></p>
+  
+  <h3>C 語言中的 `const` 和 `free` 用法詳解</h3>
+  
+  <p>`const` 關鍵字用於定義常數，不能改變其值。以下是幾個範例：</p>
+  
+  <ul>
+      <li><code>char* const b</code>：表示指標 `b` 本身不能改變，但指向的內容可以改變。</li>
+      <li><code>const char* a</code>：表示指標 `a` 指向的內容不能改變，但指標本身可以改變。</li>
+      <li><code>const char* const c</code>：表示指標 `c` 本身和其指向的內容都不能改變。</li>
+  </ul>
+  
+  <p>範例程式碼：</p>
+  
+  <pre>
+  const char* a = NULL;
+  a = "ABCD"; // 編譯通過，執行不會報錯
+  //*a = 'a'; // 編譯報錯，因為內容不能修改
+  
+  char* const b = NULL;
+  *b = "abcde"; // 編譯通過，因為內容可以修改
+  //b = "aab"; // 編譯報錯，因為指標變數是一個常量，不能被修改
+  
+  const char* const c = "abcd"; // 內容和指標變數都不能被修改
+  </pre>
+  
+  <p>來源：<a href="https://www.itread01.com/content/1550661862.html">https://www.itread01.com/content/1550661862.html</a></p>
+  
+  <h2>VSCode 環境變數設定</h2>
+  
+  <p>在 VSCode 中，可以透過設定檔來定義環境變數。有兩種方法可以將 library 路徑加入設定中：</p>
+  
+  <ol>
+      <li>將 library 放入工作區：這樣每個資料夾都會有自己的 `.vscode` 資料夾和設定檔。</li>
+      開啟命令選擇區 Ctrl+Shift+P 可以找到C/C++ 編譯組板c_cpp_properties.json
+      <pre>{
+        "configurations": [
+            {
+                "name": "Linux",
+                "includePath": [
+                    "${workspaceFolder}/**",
+                    "env:${ROOTSYS}/include"
+                ],
+                "defines": [],
+                "compilerPath": "/usr/bin/gcc",
+                "cStandard": "gnu17",
+                "cppStandard": "gnu++14",
+                "intelliSenseMode": "linux-gcc-x64"
+            }
+        ],
+        "version": 4
+    }
+     </pre>
+      <li>將 library 路徑放入設定檔中：這樣可以在不同的資料夾中共用相同的設定。</li>
+      <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為範例 :<br></div>
+      <img class="text-center" src="images/libraryC.svg" alt="SuperKEKB-BelleII_thumbnail">
+  </ol>
+  
+  <p>更多關於 VSCode 環境變數的資訊，可以參考 <a href="https://code.visualstudio.com/docs/editor/variables-reference">官方文件</a>。</p>
+  <br>
   <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
   <ol>
-    <li><a href="https://sourceforge.net/projects/vcxsrv/">XLaunch:https://sourceforge.net/projects/vcxsrv/</a></li>
-    <li><a href="https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions">CERN Root:https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions</a></li>
-    <li><a href="https://root.cern/for_developers/root7/">ROOT7:https://root.cern/for_developers/root7/</a></li>
+    <li><a href="https://code.visualstudio.com/docs/editor/variables-reference">Vscode 環境變量</a></li>
+    <li><a href="https://spaul6627.medium.com/%E5%A6%82%E4%BD%95%E5%9C%A8-vscode-%E5%8C%AF%E5%85%A5-root-library-a12127feabc7">學長的Vscode環境變數教學</a></li>
+    <li><a href="https://www.itread01.com/content/1550661862.html">C語言中的const,free用法詳解 </a></li>
     </ol>
                   
 </div>
