@@ -39,3 +39,5 @@ TestResults.xml
 **/.gitconfig
 **/.zcom*
 **/.wget-hsts
+**/.local
+**/.bash_history
