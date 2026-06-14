@@ -41,3 +41,5 @@ TestResults.xml
 **/.wget-hsts
 **/.local
 **/.bash_history
+**/.wget-hsts
+**/.dotnet/*
