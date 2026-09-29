@@ -246,48 +246,396 @@
         </div>
       </header>
 <!-- 內文 -->
-<section id="section1">
-  <a class="style"><h2><i class="fa-solid fa-circle"></i> Linux</h2></a>
-  <a class="style" href="archives/category/Linux/Basic Command.html"><p>&emsp;&emsp;Basic Command</p></a>
-  <a class="style" href="archives/category/Linux/WSL.html"><p>&emsp;&emsp;WSL Setting</p></a>
-  <a class="style" href="archives/category/Linux/Linux_rsync_(scp).html"><p>&emsp;&emsp;Linux_rsync_(scp)</p></a>
-  <a class="style" href="archives/category/Linux/ZSH、Vim.html"><p>&emsp;&emsp;ZSH、Vim</p></a>
-  <a class="style" href="archives/category/Linux/Git&GitHub.html"><p>&emsp;&emsp;Git&GitHub</p></a>
-</section>
-<section id="section2">
-  <a class="style" ><h2><i class="fa-solid fa-circle"></i> Tools</h2></a>
-  <a class="style" href="archives/category/Tools/ROOT.html"><p>&emsp;&emsp;Cern ROOT</p></a>
-  <a class="style" href="archives/category/Tools/Vscode.html"><p>&emsp;&emsp;Vscode</p></a>
-</section>
-<section id="section3">
-  <a class="style" ><h2><i class="fa-solid fa-circle"></i> HTML</h2></a>
-  <a class="style" href="archives/category/HTML/Introduction.html"><p>&emsp;&emsp;Introduction</p></a>
-</section>
-<section id="section4">
-  <a class="style" ><h2><i class="fa-solid fa-circle"></i> HEP</h2></a>
-  <a class="style" href="archives/category/HEP/about.html"><p>&emsp;&emsp;Introduction</p></a>
-  <a class="style" href="archives/category/HEP/Capstone Project.html"><p>&emsp;&emsp;Capstone Project</p></a>
-</section>
-<section id="section5">
-  <a class="style" ><h2><i class="fa-solid fa-circle"></i> AFM</h2></a>
-  <a class="style" href="archives/category/AFM/Introduction.html"><p>&emsp;&emsp;Introduction</p></a>
-  <a class="style" href="archives/category/AFM/SCM.html"><p>&emsp;&emsp;SCM</p></a>
-  <a class="style" href="archives/category/AFM/Thesis.html"><p>&emsp;&emsp;Thesis</p></a>
-</section>
-<section id="section6">
-  <a class="style" ><h2><i class="fa-solid fa-circle"></i> Litho</h2></a>
-  <a class="style" href="archives/category/Litho/Introduction.html"><p>&emsp;&emsp;Introduction</p></a>
-  <a class="style" href="archives/category/Litho/SCM.html"><p>&emsp;&emsp;PEC</p></a>
-  <a class="style" href="archives/category/Litho/Thesis.html"><p>&emsp;&emsp;Project</p></a>
-</section>
+<style>
+  .toc-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .toc-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .toc-title h1 {
+    margin-bottom: 8px;
+    font-size: 34px;
+  }
+
+  .toc-title p {
+    color: #777;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .toc-section {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+  }
+
+  .toc-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+  }
+
+  .toc-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px 0;
+    font-size: 23px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 14px;
+  }
+
+  .toc-section h2 i {
+    font-size: 10px;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #444;
+    padding: 11px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .toc-item span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toc-item .item-icon {
+    font-size: 11px;
+    opacity: 0.55;
+  }
+
+  .toc-item .arrow {
+    font-size: 13px;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s ease;
+  }
+
+  .toc-item:hover {
+    background: #f5f5f5;
+    color: #111;
+    padding-left: 16px;
+  }
+
+  .toc-item:hover .arrow {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+
+  /* 不同分類的小標示 */
+  .toc-linux {
+    border-top: 4px solid #555;
+  }
+
+  .toc-tools {
+    border-top: 4px solid #777;
+  }
+
+  .toc-html {
+    border-top: 4px solid #999;
+  }
+
+  .toc-hep {
+    border-top: 4px solid #444;
+  }
+
+  .toc-afm {
+    border-top: 4px solid #666;
+  }
+
+  .toc-litho {
+    border-top: 4px solid #333;
+  }
+
+  @media (max-width: 768px) {
+    .toc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .toc-section {
+      padding: 20px;
+    }
+
+    .toc-title h1 {
+      font-size: 28px;
+    }
+  }
+</style>
+
+<div class="toc-container">
+
+  <div class="toc-title">
+    <h1>Knowledge Base</h1>
+    <p>Technical Notes &amp; Projects</p>
+  </div>
+
+
+  <div class="toc-grid">
+
+    <!-- Linux -->
+    <section id="section1" class="toc-section toc-linux">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        Linux
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/Linux/Basic Command.html">
+          <span>
+            <i class="fa-solid fa-terminal item-icon"></i>
+            Basic Command
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Linux/WSL.html">
+          <span>
+            <i class="fa-solid fa-display item-icon"></i>
+            WSL Setting
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Linux/Linux_rsync_(scp).html">
+          <span>
+            <i class="fa-solid fa-file-arrow-up item-icon"></i>
+            Linux_rsync_(scp)
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Linux/ZSH、Vim.html">
+          <span>
+            <i class="fa-solid fa-code item-icon"></i>
+            ZSH、Vim
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Linux/Git&GitHub.html">
+          <span>
+            <i class="fa-brands fa-github item-icon"></i>
+            Git &amp; GitHub
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- Tools -->
+    <section id="section2" class="toc-section toc-tools">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        Tools
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/Tools/ROOT.html">
+          <span>
+            <i class="fa-solid fa-chart-column item-icon"></i>
+            CERN ROOT
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Tools/Vscode.html">
+          <span>
+            <i class="fa-solid fa-code item-icon"></i>
+            VS Code
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- HTML -->
+    <section id="section3" class="toc-section toc-html">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        HTML
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/HTML/Introduction.html">
+          <span>
+            <i class="fa-brands fa-html5 item-icon"></i>
+            Introduction
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- HEP -->
+    <section id="section4" class="toc-section toc-hep">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        HEP
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/HEP/about.html">
+          <span>
+            <i class="fa-solid fa-atom item-icon"></i>
+            Introduction
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/HEP/Capstone Project.html">
+          <span>
+            <i class="fa-solid fa-flask item-icon"></i>
+            Capstone Project
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- AFM -->
+    <section id="section5" class="toc-section toc-afm">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        AFM
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/AFM/Introduction.html">
+          <span>
+            <i class="fa-solid fa-microscope item-icon"></i>
+            Introduction
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/AFM/SCM.html">
+          <span>
+            <i class="fa-solid fa-bolt item-icon"></i>
+            SCM
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/AFM/Thesis.html">
+          <span>
+            <i class="fa-solid fa-book item-icon"></i>
+            Thesis
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- Litho -->
+    <section id="section6" class="toc-section toc-litho">
+
+      <h2>
+        <i class="fa-solid fa-circle"></i>
+        Lithography
+      </h2>
+
+      <div class="toc-list">
+
+        <a class="toc-item"
+           href="archives/category/Litho/Introduction.html">
+          <span>
+            <i class="fa-solid fa-layer-group item-icon"></i>
+            Introduction
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Litho/SCM.html">
+          <span>
+            <i class="fa-solid fa-crosshairs item-icon"></i>
+            PEC
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+        <a class="toc-item"
+           href="archives/category/Litho/Thesis.html">
+          <span>
+            <i class="fa-solid fa-diagram-project item-icon"></i>
+            Project
+          </span>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
-  <!-- <a class="page-number" href="archives/category/Git/learning.html"> -->
-  <!-- <i class="fa fa-angle-right"></i></a> -->
+  <a href="archives/catalog.html" style="color: black"><i class="fa-solid fa-door-open" ></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->
