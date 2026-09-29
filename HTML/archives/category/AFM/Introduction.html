@@ -117,6 +117,12 @@
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
     </details>
+    <details>
+      <summary>
+        <a class="file" href="archives/category/Linux/Git&GitHub.html">
+          <i class="fa fa-file-lines"></i> Git&GitHub</a>
+      </summary>
+    </details>
   </details>
   <details>
     <summary>
@@ -237,104 +243,276 @@
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2024-12-02
+                2024-11-28
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-  <h1>簡介</h1>
-  <p>SCM（Scanning Conductance Microscopy）是一種掃描探針顯微術，主要用於檢測材料的電導性和表面特性。
-    雖然SCM的具體原理在提供的搜索結果中沒有明確提及，但它與其他掃描探針顯微術（如AFM）有相似的技術基礎。 </p>
-  <h1>原理</h1>
-  <p>SCM通常利用一根尖細的探針與樣品表面接觸或近距離掃描，以測量樣品的電導性和表面特性。
-    這種技術可以在奈米尺度上檢測材料的電性變化，尤其適合於檢測導體和半導體材料的表面特性。
-    與AFM相似，SCM也能在不同環境中操作，如真空、氣體或液體環境。然而，SCM的主要目的是測量電導性和電流變化，而非僅僅檢測表面形貌。
-    SCM的應用範圍包括半導體材料的檢測、奈米結構的製造等領域。</p>
-  <h1>SCM操作步驟</h1>
-  <div class="flowchart">
-    <div class="step">裝載SCM模組</div>
-    <div class="arrow"></div>
-    <div class="step">針座裝針</div>
-    <div class="arrow"></div>
-    <div class="step">將針座裝置於Burker</div>
-    <div class="arrow"></div>
-    <div class="step">開啟電腦的量測系統Nanoscope</div>
-    <div class="arrow"></div>
-    <div class="step">選擇電性量測</div>
-    <div class="arrow"></div>
-    <div class="step">使用雷射對準針頭</div>
-    <div class="arrow"></div>
-    <div class="step">調整針頭的焦距</div>
-    <div class="arrow"></div>
-    <div class="step">對準四象限</div>
-    <div class="arrow"></div>
-    <div class="step">放置樣品並使用導航(Navigate)功能尋找樣品邊界</div>
-    <div class="arrow"></div>
-    <div class="step">設定參數</div>
-</div>
-<style>.table-container {
-  text-align: center;
-}
-
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}</style>
-
-  <h1>參數設定表</h1>
+  <h1>AFM（Atomic Force Microscopy）簡介</h1>
+  <p>
+    AFM（Atomic Force Microscopy，原子力顯微術）是一種以掃描探針為基礎的奈米尺度分析技術。
+    與利用光線或電子束形成影像的顯微鏡不同，AFM是利用非常尖銳的探針在樣品表面進行掃描，
+    並偵測探針與樣品之間產生的微小作用力，藉此取得樣品的表面資訊。
+    因此，AFM不僅能觀察奈米尺度的表面形貌，也能進一步量測材料的機械、電性、磁性及其他局部性質。
+  </p>
+  <p>
+    AFM的一項重要特色是不要求樣品具有導電性，因此金屬、半導體、絕緣材料、
+    薄膜、高分子與部分生物材料皆可進行分析。
+    透過不同的探針與量測模式，可以依照樣品特性與研究目的選擇適合的分析方式。
+  </p>
+  <h1>AFM的基本組成</h1>
+  <p>
+    一套典型的AFM主要由探針（Tip）、懸臂（Cantilever）、雷射與光電偵測系統、
+    掃描器（Scanner）、樣品平台及回授控制系統組成。
+    探針通常製作在懸臂前端，探針尖端的曲率半徑會直接影響橫向解析能力。
+    當探針受到樣品表面的作用力時，懸臂會產生極微小的彎曲或振動變化。
+  </p>
+  <p>
+    AFM常使用光學槓桿（Optical Lever）方式偵測懸臂的變化。
+    雷射光會照射在懸臂背面，再反射至光電偵測器。
+    當懸臂發生偏轉時，反射雷射的位置也會隨之改變，
+    儀器便能將這個微小的位置變化轉換成可分析的訊號。
+  </p>
+  <p>
+    在掃描過程中，系統會利用回授控制器調整Z方向的位置，
+    使探針與樣品之間維持適當的交互作用。
+    同時記錄X、Y方向的掃描位置以及Z方向的高度變化，
+    最後將大量量測點組合成樣品表面的三維形貌影像。
+  </p>
+  <h1>AFM成像原理</h1>
+  <p>
+    AFM的基本概念可以理解為「利用探針感受表面起伏」。
+    當探針沿著樣品表面逐行掃描時，表面的高低變化會改變探針與樣品之間的作用力，
+    造成懸臂產生偏轉或振幅變化。
+    控制系統根據偵測到的訊號即時調整探針高度，使探針能夠追蹤樣品表面的輪廓。
+  </p>
+  <p>
+    探針與樣品之間可能存在多種作用力，例如凡得瓦力、靜電力、
+    毛細作用力以及接觸產生的排斥力等。
+    實際量測時所偵測到的訊號會受到探針、樣品表面、環境及操作模式影響。
+    因此AFM影像並不是單純的「放大照片」，而是由探針與樣品交互作用所得到的量測結果。
+  </p>
+  <h1>AFM常見量測模式</h1>
   <table border="1">
-      <tr>
-          <th>參數</th>
-          <th>設定值</th>
-      </tr>
-      <tr>
-          <td>掃描方向</td>
-          <td>90度</td>
-      </tr>
-      <tr>
-          <td>解析度</td>
-          <td>512x256 px </td>
-      </tr>
-      <tr>
-          <td>下針力道 (Setpoint)</td>
-          <td>0.1V</td>
-      </tr>
-      <tr>
-          <td>頻率</td>
-          <td>100K</td>
-      </tr>
-      <tr>
-          <td>相位</td>
-          <td>-90度</td>
-      </tr>
+    <tr>
+      <th>量測模式</th>
+      <th>探針狀態</th>
+      <th>主要特徵</th>
+      <th>常見用途</th>
+    </tr>
+    <tr>
+      <td>Contact Mode</td>
+      <td>持續接觸樣品表面</td>
+      <td>以懸臂偏轉與回授訊號追蹤表面高度</td>
+      <td>表面形貌、粗糙度及需要直接接觸的量測</td>
+    </tr>
+    <tr>
+      <td>Tapping Mode</td>
+      <td>探針振盪並間歇接觸表面</td>
+      <td>降低掃描時的橫向作用力</td>
+      <td>薄膜、高分子、微奈米結構及較脆弱樣品</td>
+    </tr>
+    <tr>
+      <td>Non-Contact Mode</td>
+      <td>探針保持在樣品表面上方</td>
+      <td>利用非接觸狀態下的作用力進行量測</td>
+      <td>降低探針與樣品直接接觸造成的影響</td>
+    </tr>
   </table>
-  
-  <p>下針後，需添加調制電壓AC。</p>
+  <p>
+    在Tapping Mode中，懸臂會接近其共振頻率進行振盪，
+    探針與樣品表面的間歇性接觸會造成振幅改變。
+    系統透過維持設定的振幅並調整Z方向位置來追蹤表面高度。
+    相較於持續接觸的方式，Tapping Mode可降低掃描時的側向作用力，
+    因此常用於較容易受到機械作用影響的樣品。
+  </p>
+  <h1>AFM影像可以觀察什麼？</h1>
+  <p>
+    AFM最基本的輸出結果是樣品表面的Topography（表面形貌）。
+    透過三維形貌資料，可以分析表面顆粒、孔洞、薄膜結構、台階與局部缺陷等特徵。
+    除了直接觀察影像，也可以利用高度資料進行定量分析。
+  </p>
+  <table border="1">
+    <tr>
+      <th>分析項目</th>
+      <th>說明</th>
+    </tr>
+    <tr>
+      <td>Surface Roughness</td>
+      <td>評估樣品表面的粗糙程度</td>
+    </tr>
 
-<br>
+    <tr>
+      <td>Height</td>
+      <td>量測表面結構、顆粒或台階的高度差</td>
+    </tr>
+
+    <tr>
+      <td>Width / Size</td>
+      <td>分析表面結構的尺寸與間距</td>
+    </tr>
+
+    <tr>
+      <td>Line Profile</td>
+      <td>沿指定路徑分析表面的高度變化</td>
+    </tr>
+
+    <tr>
+      <td>3D Topography</td>
+      <td>利用高度資料建立樣品表面的三維視覺化結果</td>
+    </tr>
+  </table>
 
 
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+  <h1>AFM的延伸分析</h1>
+
+  <p>
+    AFM並不只侷限於表面形貌量測。
+    透過不同的探針、訊號與操作模式，可以將AFM延伸至材料性質分析。
+    例如電性相關模式可分析表面電位與局部電流，
+    磁性相關模式可以研究磁性結構，
+    而力學相關量測則能分析探針與材料接觸過程中的作用力及材料的機械性質。
+  </p>
+
+  <p>
+    NIST資料指出，現代AFM已經從單純的表面形貌觀察，
+    發展至機械、電性、磁性及化學等不同性質的奈米尺度分析。
+    在奈米機械量測中，也可以進一步取得彈性模數、黏附力、
+    摩擦及黏彈性等材料資訊。
+  </p>
+
+
+  <h1>AFM的應用</h1>
+
+  <p>
+    AFM可應用於材料科學、半導體、奈米科技、生物材料及表面工程等領域。
+    在半導體與微奈米製程中，可利用AFM分析表面粗糙度、
+    結構尺寸、線寬、深度與表面缺陷。
+    對薄膜與材料研究而言，AFM也能用於比較不同製程條件所造成的表面形貌差異。
+  </p>
+
+  <p>
+    由於AFM能夠在奈米尺度進行局部量測，
+    因此也適合用於研究單一顆粒、奈米結構、薄膜表面以及材料界面。
+    搭配不同AFM模式後，還可以將表面形貌與材料其他性質進行關聯分析。
+  </p>
+
+
+  <h1>AFM量測時的注意事項</h1>
+
+  <p>
+    AFM的量測結果會受到探針狀態、樣品固定方式、掃描速度、
+    回授設定及環境振動等因素影響。
+    探針尖端若受到碰撞或磨損，可能造成影像解析度下降，
+    或產生與真實樣品形貌不同的影像特徵。
+  </p>
+
+  <p>
+    掃描速度與回授參數也需要配合樣品表面起伏進行調整。
+    若回授速度不足，探針可能無法正確追蹤表面高度，
+    造成影像中的結構失真或Trace與Retrace差異。
+    因此實際量測時，應先取得穩定且可重現的影像，再進行後續定量分析。
+  </p>
+
+
+  <h1>AFM量測流程</h1>
+
+  <div class="flowchart">
+
+    <div class="step">選擇適合的AFM探針</div>
+    <div class="arrow"></div>
+
+    <div class="step">安裝探針並確認懸臂狀態</div>
+    <div class="arrow"></div>
+
+    <div class="step">固定樣品</div>
+    <div class="arrow"></div>
+
+    <div class="step">調整雷射位置與光電偵測器訊號</div>
+    <div class="arrow"></div>
+
+    <div class="step">選擇適合的AFM量測模式</div>
+    <div class="arrow"></div>
+
+    <div class="step">設定掃描範圍與影像解析度</div>
+    <div class="arrow"></div>
+
+    <div class="step">進行探針Approach</div>
+    <div class="arrow"></div>
+
+    <div class="step">調整回授及掃描參數</div>
+    <div class="arrow"></div>
+
+    <div class="step">確認Trace與Retrace穩定</div>
+    <div class="arrow"></div>
+
+    <div class="step">取得Topography影像</div>
+    <div class="arrow"></div>
+
+    <div class="step">進行Height、Roughness或Line Profile分析</div>
+    <div class="arrow"></div>
+
+    <div class="step">儲存影像與量測數據</div>
+
+  </div>
+
+
+  <style>
+    .table-container {
+      text-align: center;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  </style>
+
+
+  <h1>Reference</h1>
+
   <ol>
-    <li><a href="https://en.wikipedia.org/wiki/Scanning_ion-conductance_microscopy">SCM wiki</a></li>
-    <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/table">HTML Table文獻</a></li>
-    </ol>
-                  
+    <li>
+       
+      <a href="https://afm.oxinst.com/library/outreach/how-does-an-afm-microscope-work">
+        Oxford Instruments : AFM Principle
+      </a>
+    </li>
+
+    <li>
+      
+      <a href="https://www.nist.gov/programs-projects/atomic-force-microscopy">
+        NIST : Atomic-force microscopy
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.bruker.com/en/products-and-solutions/microscopes/materials-afm/afm-modes/contact-mode.html">
+        Bruker : Contact Mode
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.bruker.com/content/bruker/int/ja/products-and-solutions/microscopes/materials-afm/afm-modes/tapping-mode.html">
+        Bruker : TappingMode
+      </a>
+    </li>
+  </ol>
+
 </div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
-  <a class="page-number" href="archives/category/SCM/Project.html">
-  <i class="fa fa-angle-right"></i></a>
+    <a href="archives/category/AFM/Introduction.html" style="color: black"><i class="fa-solid fa-door-open" ></i></a>
+    <a href="archives/category/AFM/SCM.html" style="color: black" ><i class="fa fa-angle-right" ></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->

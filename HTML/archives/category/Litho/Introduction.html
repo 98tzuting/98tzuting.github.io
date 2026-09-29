@@ -117,6 +117,12 @@
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
     </details>
+    <details>
+      <summary>
+        <a class="file" href="archives/category/Linux/Git&GitHub.html">
+          <i class="fa fa-file-lines"></i> Git&GitHub</a>
+      </summary>
+    </details>
   </details>
   <details>
     <summary>
@@ -222,9 +228,9 @@
 <header class="path">
   <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >HEP</span>
+    <span class="style" >Litho</span>
     <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >簡介</span>
+    <span class="style" >Introduction</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
@@ -233,42 +239,524 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >簡介</h1>
+            <h1 class="post-title" >Introduction</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-09-25
+                2026-02-25
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>HEP 是High Energy Physics 中文是高能物理<br>
-          </p><p>我是以前在<strong> BelleII </strong>分析的專題生</p><br>
-          除了日本的BelleII也有歐洲有名的LHC的組織<br>
-          目前都在使用belleII的數據庫，從產生到篩選再到分析<br>
-          有興趣的都可以找的到官方資料，除了數據分析，還有一部分的人是做偵測器。<br>
-          高能物理是粒子物理，觀察e<sup>+ </sup>e<sup>- </sup>大型粒子堆撞後，經由偵測器所偵測的數據在做分析。<br>
-              <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為官方偵測器的圖片 :<br></div>
-              <img class="text-center" src="images/SuperKEKB-BelleII.svg"
-              alt="SuperKEKB-BelleII_thumbnail">
-              
-              <br>
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+
+  <style>
+    .litho-section {
+      margin: 30px 0;
+    }
+
+    .process-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .process-box {
+      width: 180px;
+      min-height: 110px;
+      padding: 20px;
+      border: 2px solid #444;
+      border-radius: 12px;
+      text-align: center;
+      box-sizing: border-box;
+      background: #fafafa;
+    }
+
+    .process-box h3 {
+      margin: 0 0 10px 0;
+    }
+
+    .process-arrow {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .info-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .info-card {
+      flex: 1;
+      min-width: 250px;
+      padding: 20px;
+      border-left: 5px solid #555;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background: #eeeeee;
+    }
+
+    .highlight {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background: #f7f7f7;
+    }
+  </style>
+
+
+  <h1>黃光微影製程簡介</h1>
+
+  <p>
+    黃光微影（Photolithography）是半導體與微機電製程中常見的圖案轉移技術，
+    主要利用光阻（Photoresist）在光照下產生化學性質變化，再透過顯影將圖案形成於基板表面。
+    其目的並不是直接在晶圓上「畫」出結構，而是先利用光罩將圖形選擇性地轉移至光阻層，
+    再以光阻圖案作為後續蝕刻、鍍膜或其他製程的遮罩。
+  </p>
+
+  <p>
+    一般黃光微影製程包含基板前處理、光阻塗佈（Coating）、軟烤（Soft Bake）、
+    對準（Alignment）、曝光（Exposing）、曝光後烘烤（Post Exposure Bake）、
+    顯影（Develop）及最終檢查等步驟。
+    實際製程會依光阻種類、膜厚、基板材料與曝光設備而有所不同。
+  </p>
+
+
+  <div class="highlight">
+    <strong>黃光微影的核心概念：</strong>
+    利用光線將光罩上的圖案轉移至光阻，或是electron beam(E-beam)直寫式轉移至光阻，再利用顯影將可溶解區域去除，
+    最後得到具有特定幾何形狀的光阻圖案。
+  </div>
+
+
+  <h1>黃光微影基本流程</h1>
+
+  <div class="process-flow">
+
+    <div class="process-box">
+      <h3>① Coating</h3>
+      <p>光阻塗佈</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>② Soft Bake</h3>
+      <p>軟烤</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>③ Exposing</h3>
+      <p>對準與曝光</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>④ Develop</h3>
+      <p>顯影</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>⑤ Inspection</h3>
+      <p>圖案檢查</p>
+    </div>
+
+  </div>
+
+
+  <h1>Coating｜光阻塗佈</h1>
+
+  <p>
+    Coating是黃光微影的第一個主要步驟，目的是在基板表面形成厚度均勻的光阻薄膜。
+    常見方法為旋轉塗佈（Spin Coating），先將液態光阻滴加至基板中央，
+    再利用高速旋轉使光阻藉由離心力向外展開，形成均勻薄膜。
+  </p>
+
+  <p>
+    光阻膜厚會受到光阻黏度、旋轉速度、旋轉時間以及基板狀態等因素影響。
+    一般而言，提高旋轉速度會使光阻膜變薄，而降低旋轉速度則容易得到較厚的膜層。
+    因此實際製程必須依照所使用光阻的材料特性及製程規範建立對應的Spin Curve。
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>Coating重點</h3>
+      <p>
+        基板表面需要保持乾淨，避免顆粒或污染物造成光阻膜厚不均。
+        光阻滴加後應使其充分覆蓋基板，再進行正式旋轉。
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>膜厚控制</h3>
+      <p>
+        膜厚受到光阻種類、黏度與Spin Speed影響。
+        膜厚會直接影響曝光與顯影結果，因此是重要的製程控制項目。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>Soft Bake｜軟烤</h1>
+
+  <p>
+    光阻塗佈完成後，通常需要進行Soft Bake。
+    軟烤的主要目的包括移除光阻中的部分溶劑、穩定光阻膜，
+    並改善光阻與基板之間的附著性。
+    軟烤條件若不適當，可能導致曝光與顯影時的膜層特性發生變化。
+  </p>
+
+  <p>
+    軟烤的溫度與時間需要依光阻材料及膜厚進行調整。
+    因為不同光阻的溶劑組成與熱特性不同，因此實際製程通常使用廠商提供的建議條件，
+    再透過實驗建立適合設備的製程Recipe。
+  </p>
+
+
+  <h1>Exposing｜對準與曝光</h1>
+
+  <p>
+    曝光的目的，是利用光罩（Photomask）將所需的圖案轉移至光阻。
+    在曝光設備中，晶圓與光罩需要依照製程設計進行對準，
+    使新的圖案能夠與晶圓上既有結構正確疊合。
+  </p>
+
+  <p>
+    光源照射後，光阻中的感光成分會發生化學變化。
+    曝光後光阻的溶解性會依光阻種類而改變，因此後續顯影時，
+    被曝光區域或未曝光區域其中之一會優先被顯影液移除。
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>曝光劑量</h3>
+      <p>
+        Exposure Dose通常與曝光強度及曝光時間有關。
+        曝光不足可能造成圖案無法完整形成，而曝光過度則可能造成線寬偏移、
+        鄰近區域受到額外曝光或細小結構失真。
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Alignment</h3>
+      <p>
+        多層微影製程中，曝光前必須將光罩圖案與晶圓上既有圖案對準。
+        Alignment Accuracy會直接影響不同製程層之間的位置誤差。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>Develop｜顯影</h1>
+
+  <p>
+    曝光完成後，光阻內部已形成潛影（Latent Image），
+    但肉眼通常無法直接看到完整圖案，因此需要透過顯影將圖案實際建立出來。
+    顯影液會選擇性地溶解曝光後具有較高溶解性的光阻區域，
+    最後在基板上留下具有圖案的光阻結構。
+  </p>
+
+  <p>
+    對正光阻（Positive Photoresist）而言，曝光區域通常變得較容易被顯影液溶解，
+    因此顯影後曝光區域被移除。
+    對負光阻（Negative Photoresist）而言，曝光會使光阻產生交聯或其他反應，
+    使曝光區域變得較不易溶解，因此顯影後通常保留曝光區域。
+  </p>
+
+  <div class="highlight">
+    <strong>注意：</strong>
+    顯影液的種類、顯影時間、溫度與顯影方式都會影響最終圖案。
+    顯影不足可能留下殘膠，而顯影過度則可能使光阻圖形尺寸縮小或結構受損。
+  </div>
+
+
+  <h1>正光阻與負光阻</h1>
+
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>正光阻 Positive Resist</th>
+      <th>負光阻 Negative Resist</th>
+    </tr>
+
+    <tr>
+      <td>曝光區域</td>
+      <td>通常變得可溶於顯影液</td>
+      <td>通常變得較不易溶解</td>
+    </tr>
+
+    <tr>
+      <td>顯影後保留區域</td>
+      <td>未曝光區域</td>
+      <td>曝光區域</td>
+    </tr>
+
+    <tr>
+      <td>主要反應</td>
+      <td>曝光後提高溶解性</td>
+      <td>曝光後產生交聯或其他使其難溶的反應</td>
+    </tr>
+
+    <tr>
+      <td>常見用途</td>
+      <td>細線路與一般圖案轉移</td>
+      <td>厚膜、結構製作及特定微機電製程</td>
+    </tr>
+  </table>
+
+
+  <h1>黃光微影重要製程參數</h1>
+
+  <table>
+    <tr>
+      <th>製程項目</th>
+      <th>主要參數</th>
+      <th>對圖案的影響</th>
+    </tr>
+
+    <tr>
+      <td>Coating</td>
+      <td>Spin Speed、Time、Resist Viscosity</td>
+      <td>影響光阻膜厚與均勻度</td>
+    </tr>
+
+    <tr>
+      <td>Soft Bake</td>
+      <td>Temperature、Time</td>
+      <td>影響溶劑殘留及光阻穩定性</td>
+    </tr>
+
+    <tr>
+      <td>Exposure</td>
+      <td>Wavelength、Dose、Focus</td>
+      <td>影響圖案尺寸與解析度</td>
+    </tr>
+
+    <tr>
+      <td>Alignment</td>
+      <td>Alignment Offset</td>
+      <td>影響多層圖案之間的位置誤差</td>
+    </tr>
+
+    <tr>
+      <td>Develop</td>
+      <td>Developer、Time、Temperature</td>
+      <td>影響圖案完整度、線寬及殘膠</td>
+    </tr>
+  </table>
+
+
+  <h1>曝光結果與圖案形成</h1>
+
+  <p>
+    黃光微影完成後，理想結果應具有清楚且連續的光阻圖案，
+    並且圖案尺寸與設計值保持在可接受的誤差範圍內。
+    實際製程通常會利用光學顯微鏡、CD量測或其他表面分析方法進行確認。
+  </p>
+
+  <p>
+    若曝光劑量、光阻膜厚或顯影條件不適當，
+    可能產生線寬變化、殘膠、圖案斷裂、塌陷或解析度下降等問題。
+    因此黃光微影並非單一參數控制的製程，而是Coating、Bake、Exposure與Develop
+    多個條件共同作用的結果。
+  </p>
+
+
+  <h1>常見製程異常</h1>
+
+  <table>
+    <tr>
+      <th>異常現象</th>
+      <th>可能原因</th>
+    </tr>
+
+    <tr>
+      <td>光阻膜厚不均</td>
+      <td>Spin Speed不穩定、光阻分布不均、基板污染或表面狀態異常</td>
+    </tr>
+
+    <tr>
+      <td>顯影後殘膠</td>
+      <td>顯影不足、曝光劑量不足或光阻膜厚過厚</td>
+    </tr>
+
+    <tr>
+      <td>線寬偏大或偏小</td>
+      <td>曝光劑量、焦距、顯影時間或光阻厚度不適當</td>
+    </tr>
+
+    <tr>
+      <td>圖案缺角或斷裂</td>
+      <td>光阻附著性不足、曝光條件不佳或顯影過度</td>
+    </tr>
+
+    <tr>
+      <td>圖案位置偏移</td>
+      <td>光罩與晶圓Alignment誤差</td>
+    </tr>
+  </table>
+
+
+  <h1>黃光微影完整流程</h1>
+
+  <div class="process-flow">
+
+    <div class="process-box">
+      <h3>Wafer Clean</h3>
+      <p>基板清潔</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>HMDS / Prime</h3>
+      <p>表面處理</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>Coating</h3>
+      <p>光阻塗佈</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>Soft Bake</h3>
+      <p>光阻軟烤</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>Exposing</h3>
+      <p>對準曝光</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>Develop</h3>
+      <p>顯影</p>
+    </div>
+
+    <div class="process-arrow">→</div>
+
+    <div class="process-box">
+      <h3>Inspection</h3>
+      <p>圖案檢查</p>
+    </div>
+
+  </div>
+
+
+  <h1>製程重點整理</h1>
+
   <ol>
-    <li><a href="https://software.belle2.org/sphinx/release-06-00-03">https://software.belle2.org/sphinx/release-06-00-03 </a></li>
-    <li><a href="https://www.belle2.org/">https://belle.kek.jp/</a></li>
-    </ol>
-                  
+    <li>
+      <strong>Coating：</strong>
+      形成均勻且適當厚度的光阻膜。
+    </li>
+
+    <li>
+      <strong>Exposing：</strong>
+      透過光罩與曝光系統將設計圖案轉移至光阻。
+    </li>
+
+    <li>
+      <strong>Develop：</strong>
+      利用顯影液選擇性移除光阻，形成實際的微影圖案。
+    </li>
+
+    <li>
+      <strong>Inspection：</strong>
+      確認圖案尺寸、位置、完整性及是否存在殘膠或缺陷。
+    </li>
+  </ol>
+
+
+  <br>
+
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">
+    Reference :<br>
+  </div>
+
+  <ol>
+
+    <li>
+      <a href="https://web.mit.edu/2.008/www/lectures/2.008-2005-MEMS-2.pdf">
+        MIT OpenCourseWare - Photolithography / MEMS Fabrication
+      </a>
+    </li>
+
+    <li>
+      <a href="https://ocw.mit.edu/courses/2-882-system-design-and-analysis-based-on-ad-and-complexity-theories-spring-2005/93496983b4a0628e2c5b2012ebff2c47_lec328.pdf">
+        MIT OpenCourseWare - Photoresist Processing
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.microchemicals.com/DOWNLOADS/Application-Notes/">
+        MicroChemicals - Photoresist Processing Application Notes
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.microchemicals.com/dokumente/application_notes/exposure_photoresist.pdf">
+        MicroChemicals - Exposure of Photoresists
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.microchemicals.com/dokumente/application_notes/development_photoresist.pdf">
+        MicroChemicals - Development of Photoresists
+      </a>
+    </li>
+
+  </ol>
+
 </div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
-  <a class="page-number" href="archives/category/HEP/Capstone Project.html">
-  <i class="fa fa-angle-right"></i></a>
+    <a href="archives/category/Litho/Introduction.html" style="color: black"><i class="fa-solid fa-door-open" ></i></a>
+    <a href="archives/category/Litho/PEC.html" style="color: black" ><i class="fa fa-angle-right" ></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->

@@ -117,6 +117,12 @@
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
     </details>
+    <details>
+      <summary>
+        <a class="file" href="archives/category/Linux/Git&GitHub.html">
+          <i class="fa fa-file-lines"></i> Git&GitHub</a>
+      </summary>
+    </details>
   </details>
   <details>
     <summary>
@@ -222,9 +228,9 @@
 <header class="path">
   <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >HEP</span>
+    <span class="style" >Litho</span>
     <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >Capstone Project</span>
+    <span class="style" >PEC</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
@@ -233,50 +239,625 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >Capstone Project</h1>
+            <h1 class="post-title" >PEC</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-09-27
+                2026-02-27
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>首先是模擬分析，利用蒙地卡羅方法(Monte Carlo method)去重建(Reconstruction)，這些數據是Mdst.root。<br>
-          先產生大量事件，此事件是我們所需要衰變的分支(DecayTable)，利用官方給的衰變分枝比去寫Python，先假設衰變分之比是100%衰變<br>
-          再利用這些龐大的數據丟去篩選程式(Skimming code)，會產生我們所需要的數據(udst.root)，也是我們想要的原始數據，
-          可能是偵測器的參數調整動能或是粒子的編號(PDG)要正確，還有粒子質量的範圍等等，這些都是可篩選的參數。<br>
-          在經過物理分析後再產生更大集合(Ntuple.root)，因為衰變可能是<strong>幾億分之一</strong>，不產生更大量數據會
-          無法產生我們想要的粒子，這些集合可能跑500億，這些數據不可能在本機完成，一定是利用遠端KEK的超級電腦完成，也就是說要丟程式碼
-          給日本伺服器運行才跑得動。<br>
-          上述都是模擬分析，與實際KEK數據完全無關，這些只能證明說理論上要有這些粒子。<br>
-          但現實中(Nature)中，每天KEK會一直粒子對撞而產生數據，而這些數據要與我們模擬的方式一樣進行，經過同樣的篩選程式(Skimming code)，
-          才會是現實中存在的粒子，這最後步驟我們稱開箱(Open Data)，當然這龐大的數據也是KEK伺服器完成。<br>
-          官方也有許多教程與文獻，大多都需要申請帳號才能查閱，但也很佛心也有公開的 <a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a> 。<br>
-          </p>    
-          <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為前人所做的流程圖片 :<br></div>
-          <img class="text-center" src="images/BelleIIAnalysisModel.svg" alt="Belle II Analysis Models">
-              
-          <br>
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+
+  <style>
+    .pec-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px auto;
+    }
+
+    .pec-box {
+      width: 180px;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      border: 2px solid #555;
+      border-radius: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      background: #fafafa;
+    }
+
+    .pec-box strong {
+      font-size: 18px;
+    }
+
+    .pec-arrow {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .pec-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 25px 0;
+    }
+
+    .pec-card {
+      flex: 1;
+      min-width: 240px;
+      padding: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+
+    .pec-card h3 {
+      margin-top: 0;
+    }
+
+    .formula {
+      padding: 18px;
+      margin: 22px 0;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f5f5f5;
+    }
+
+    .scatter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    .scatter-item {
+      flex: 1;
+      min-width: 270px;
+      padding: 20px;
+      border-radius: 8px;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+    }
+
+    .scatter-item h3 {
+      text-align: center;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background: #eeeeee;
+    }
+
+    .note {
+      padding: 16px;
+      margin: 20px 0;
+      border-left: 5px solid #555;
+      background: #f4f4f4;
+    }
+  </style>
+
+
+  <h1>PEC（Proximity Effect Correction）簡介</h1>
+
+  <p>
+    PEC（Proximity Effect Correction，鄰近效應修正）是電子束微影
+    （Electron Beam Lithography, EBL）中非常重要的製程技術。
+    電子束在光阻上進行曝光時，入射電子並不會只沿著原本的直線路徑前進，
+    而會與光阻及基板中的原子產生散射，使電子能量分布到原始曝光位置以外的區域。
+  </p>
+
+  <p>
+    當相鄰圖形距離較近時，一個圖形所產生的散射電子會對周圍圖形造成額外曝光，
+    使不同位置實際受到的曝光劑量與設計值產生差異。
+    這種由鄰近圖形造成的非預期曝光效應稱為Proximity Effect。
+    PEC的目的，就是利用劑量修正來補償這些額外的能量沉積，
+    使顯影後的圖形尺寸更接近原始設計。
+  </p>
+
+
+  <div class="note">
+    <strong>核心概念：</strong>
+    電子束微影的Proximity Effect主要與電子散射造成的能量沉積範圍有關，
+    其中前向散射主要決定較小尺度的曝光擴散，
+    背向散射則會在較大的範圍內提供額外曝光。
+  </div>
+
+
+  <h1>Proximity Effect的形成原因</h1>
+
+  <p>
+    電子束進入光阻後，會在光阻與基板材料中發生不同程度的散射。
+    其中前向散射（Forward Scattering）主要發生在電子穿過光阻的過程，
+    使電子束在光阻內逐漸展開。
+    另一方面，部分電子會深入基板後受到大角度散射並重新返回光阻，
+    形成背向散射（Backscattering）。
+  </p>
+
+  <p>
+    因此，即使電子束本身具有非常小的聚焦直徑，
+    最終在光阻中實際產生的能量分布仍然會擴散到更大的區域。
+    對於密集排列的圖形而言，鄰近圖形所產生的散射電子會彼此疊加，
+    導致局部曝光劑量增加。
+  </p>
+
+
+  <h1>Forward Scattering（前向散射）</h1>
+
+  <div class="scatter-container">
+
+    <div class="scatter-item">
+      <h3>α Effect</h3>
+
+      <p>
+        前向散射主要發生於電子束穿過光阻層時。
+        電子受到光阻材料中的原子散射後，行進方向會產生偏移，
+        使原本集中的電子束在光阻深度方向逐漸展開。
+      </p>
+
+      <p>
+        前向散射的特徵尺度通常較小，因此對奈米尺度圖形的解析度與線寬
+        具有直接影響。光阻厚度與材料性質改變時，前向散射造成的展寬程度也會改變。
+      </p>
+    </div>
+
+    <div class="scatter-item">
+      <h3>α：短距離散射尺度</h3>
+
+      <p>
+        在常見的Proximity Effect模型中，
+        α可用來描述前向散射造成的局部曝光擴散尺度。
+        α越大，表示電子束在光阻內的橫向能量分布越寬，
+        可能造成較明顯的圖形展寬。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>Backscattering（背向散射）</h1>
+
+  <div class="scatter-container">
+
+    <div class="scatter-item">
+      <h3>β Effect</h3>
+
+      <p>
+        部分入射電子會穿過光阻並進入基板，
+        在基板中受到較大角度的散射後重新返回光阻附近。
+        這些返回的電子會在原始曝光位置周圍額外產生能量沉積，
+        形成範圍較大的背景曝光。
+      </p>
+
+      <p>
+        因此，背向散射對較大範圍內的鄰近圖形具有影響，
+        特別是在密集圖形、大面積圖形或高劑量曝光條件下，
+        其效應可能更加明顯。
+      </p>
+    </div>
+
+    <div class="scatter-item">
+      <h3>β：長距離散射尺度</h3>
+
+      <p>
+        在Proximity Effect模型中，
+        β通常用來描述背向散射所造成的較大尺度曝光分布。
+        與α相比，β的作用範圍通常大得多，
+        因此會形成較廣泛的背景劑量。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>α與β的差異</h1>
+
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>前向散射 α</th>
+      <th>背向散射 β</th>
+    </tr>
+
+    <tr>
+      <td>英文</td>
+      <td>Forward Scattering</td>
+      <td>Backscattering</td>
+    </tr>
+
+    <tr>
+      <td>主要位置</td>
+      <td>光阻層內</td>
+      <td>基板與光阻附近</td>
+    </tr>
+
+    <tr>
+      <td>散射範圍</td>
+      <td>較小</td>
+      <td>較大</td>
+    </tr>
+
+    <tr>
+      <td>主要影響</td>
+      <td>局部圖形解析度與線寬</td>
+      <td>廣域背景曝光與鄰近圖形劑量</td>
+    </tr>
+
+    <tr>
+      <td>主要影響尺度</td>
+      <td>奈米尺度</td>
+      <td>較大範圍的微米尺度</td>
+    </tr>
+  </table>
+
+
+  <h1>Proximity Effect的劑量分布</h1>
+
+  <p>
+    PEC常使用雙高斯（Double Gaussian）模型近似電子束在光阻與基板中的能量分布。
+    其中較窄的Gaussian分布描述前向散射，
+    較寬的Gaussian分布則描述背向散射。
+  </p>
+
+  <div class="formula">
+    <strong>Point Spread Function（PSF）</strong>
+    <br><br>
+    PSF(r) =
+    (1 - η) / (π α²) × exp(-r² / α²)
+    +
+    η / (π β²) × exp(-r² / β²)
+  </div>
+
+  <p>
+    其中α代表前向散射的特徵尺度，
+    β代表背向散射的特徵尺度，
+    η則代表散射電子所占的相對比例。
+    透過此類模型，可以描述單一電子束曝光後在空間中的能量沉積分布，
+    並進一步估算相鄰圖形對目前曝光位置所造成的額外劑量。
+  </p>
+
+
+  <h1>Proximity Effect的實際影響</h1>
+
+  <p>
+    假設兩個相鄰圖形分別需要相同的設計劑量，
+    但其中一個圖形附近具有較多的曝光面積，
+    則它所接收到的背向散射電子可能比孤立圖形更多。
+    因此，即使兩個圖形設定相同的Primary Dose，
+    最終的有效曝光劑量仍可能不同。
+  </p>
+
+  <p>
+    這種情況可能造成圖形尺寸偏差，
+    例如線寬變粗、間距縮小、孔洞尺寸改變或密集圖形與孤立圖形之間產生CD差異。
+    對高解析度電子束微影而言，
+    這種非均勻曝光會限制圖形轉移的準確度。
+  </p>
+
+
+  <h1>PEC的基本原理</h1>
+
+  <div class="formula">
+    原始Pattern
+    → 散射模型
+    → 計算額外曝光劑量
+    → Local Dose Correction
+    → Electron Beam Exposure
+    → Develop
+    → CD確認
+  </div>
+
+  <p>
+    PEC的主要概念是將整個圖形拆解成不同區域，
+    先根據每個位置周圍的圖形分布計算其預期受到的散射劑量，
+    再調整各區域的電子束曝光劑量。
+  </p>
+
+  <p>
+    當某一區域因鄰近圖形而接受較高的散射劑量時，
+    PEC會降低該區域的Primary Exposure Dose；
+    相反地，對於受到鄰近散射影響較小的區域，
+    則可能需要較高的曝光劑量。
+    最終目標是讓整個圖形的Effective Dose更加均勻。
+  </p>
+
+
+  <h1>PEC操作流程</h1>
+
+  <div class="pec-flow">
+
+    <div class="pec-box">
+      <strong>① GDSII</strong>
+      <p>輸入原始Layout</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>② Pattern Analysis</strong>
+      <p>分析圖形分布</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>③ Scattering Model</strong>
+      <p>建立α / β模型</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>④ Dose Calculation</strong>
+      <p>計算局部曝光劑量</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>⑤ PEC</strong>
+      <p>修正Local Dose</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>⑥ EBL</strong>
+      <p>電子束曝光</p>
+    </div>
+
+    <div class="pec-arrow">→</div>
+
+    <div class="pec-box">
+      <strong>⑦ Develop</strong>
+      <p>顯影圖形</p>
+    </div>
+
+  </div>
+
+
+  <h1>PEC修正的主要方式</h1>
+
+  <table>
+    <tr>
+      <th>修正項目</th>
+      <th>內容</th>
+    </tr>
+
+    <tr>
+      <td>Local Dose Correction</td>
+      <td>依照圖形鄰近程度調整局部曝光劑量</td>
+    </tr>
+
+    <tr>
+      <td>Pattern Density Correction</td>
+      <td>補償不同圖形密度造成的曝光差異</td>
+    </tr>
+
+    <tr>
+      <td>Area Correction</td>
+      <td>根據曝光面積與鄰近圖形估算額外散射劑量</td>
+    </tr>
+
+    <tr>
+      <td>Geometry-based Correction</td>
+      <td>依圖形幾何結構與間距進行劑量補償</td>
+    </tr>
+  </table>
+
+
+  <h1>孤立圖形與密集圖形</h1>
+
+  <div class="scatter-container">
+
+    <div class="scatter-item">
+      <h3>Isolated Pattern</h3>
+
+      <p>
+        圖形周圍沒有大量鄰近曝光區域，
+        因此受到其他圖形所產生的背向散射影響較小。
+        其Effective Dose較接近原始設定的Primary Dose。
+      </p>
+    </div>
+
+    <div class="scatter-item">
+      <h3>Dense Pattern</h3>
+
+      <p>
+        周圍存在較多曝光區域，
+        不同位置產生的背向散射會相互疊加，
+        因而使局部Effective Dose增加。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>影響PEC效果的因素</h1>
+
+  <table>
+    <tr>
+      <th>因素</th>
+      <th>對Proximity Effect的影響</th>
+    </tr>
+
+    <tr>
+      <td>Acceleration Voltage</td>
+      <td>影響電子在光阻與基板中的穿透深度及散射行為</td>
+    </tr>
+
+    <tr>
+      <td>Resist Thickness</td>
+      <td>影響前向散射與能量沉積分布</td>
+    </tr>
+
+    <tr>
+      <td>Substrate Material</td>
+      <td>影響背向散射程度</td>
+    </tr>
+
+    <tr>
+      <td>Pattern Density</td>
+      <td>影響鄰近圖形造成的總散射劑量</td>
+    </tr>
+
+    <tr>
+      <td>Exposure Dose</td>
+      <td>影響最終光阻圖案尺寸及顯影結果</td>
+    </tr>
+
+    <tr>
+      <td>Resist Type</td>
+      <td>影響光阻對電子束曝光的反應及顯影特性</td>
+    </tr>
+  </table>
+
+
+  <h1>PEC與黃光製程的關係</h1>
+
+  <p>
+    在黃光製程環境中，電子束微影通常與一般光學微影使用不同的圖形曝光方式。
+    一般光學微影利用光罩與光線進行圖形轉移，
+    而電子束微影則利用聚焦電子束直接在光阻上進行寫入。
+  </p>
+
+  <p>
+    因為電子束寫入過程會受到前向散射與背向散射影響，
+    所以在進行EBL曝光前需要考慮Proximity Effect。
+    PEC便是在曝光前先計算不同圖形位置所需要的局部劑量，
+    使顯影後得到的圖形能夠更接近Design Layout。
+  </p>
+
+
+  <h1>PEC與OPC的區別</h1>
+
+  <p>
+    PEC與OPC雖然都與微影圖形的尺寸修正有關，
+    但其物理來源與使用方式不同。
+    本頁所討論的PEC主要針對電子束微影中的電子散射效應，
+    特別是前向散射α與背向散射β所造成的額外曝光劑量。
+  </p>
+
+  <p>
+    OPC（Optical Proximity Correction）則主要用於光學微影，
+    用來補償光學系統中的繞射、干涉及鄰近圖形造成的成像誤差。
+    因此兩者雖然都具有「修正微影圖形」的目的，
+    但不能將PEC與OPC視為完全相同的技術。
+  </p>
+
+
+  <h1>製程結果確認</h1>
+
+  <p>
+    PEC完成後仍需要透過實際電子束曝光與顯影確認修正效果。
+    常見的確認方式包括SEM觀察、CD量測以及不同Pattern Density之間的尺寸比較。
+    若實際CD仍與Target CD存在偏差，
+    可依量測結果重新調整散射模型或Local Dose參數。
+  </p>
+
+  <p>
+    因此完整的PEC並不是一次性的劑量設定，
+    而是建立「模型 → 劑量修正 → 曝光 → 顯影 → CD量測 → 模型調整」的迴圈，
+    逐步改善圖形轉移的準確度。
+  </p>
+
+
+  <h1>重點整理</h1>
+
   <ol>
-    <li><a href="
-      https://indico.fnal.gov/event/23628/contributions/241330/attachments/154947/201676/BelleIIAnalysisModel.pdf ">
-      Belle II Analysis Models  </a></li>
-    <li><a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a></li>
-    <li><a href="https://www.belle2.org/">https://belle.kek.jp/</a></li>
-    </ol>
-                  
+    <li>
+      <strong>Forward Scattering（α）：</strong>
+      主要描述電子在光阻內的前向散射，影響較小尺度的曝光擴散。
+    </li>
+
+    <li>
+      <strong>Backscattering（β）：</strong>
+      電子進入基板後受到散射並返回光阻附近，形成較大範圍的額外曝光。
+    </li>
+
+    <li>
+      <strong>Proximity Effect：</strong>
+      鄰近圖形所產生的散射電子會改變局部Effective Dose。
+    </li>
+
+    <li>
+      <strong>PEC：</strong>
+      根據散射模型及Pattern Density調整Local Exposure Dose，
+      以補償鄰近效應造成的尺寸偏差。
+    </li>
+
+    <li>
+      <strong>OPC：</strong>
+      主要是光學微影中的鄰近效應修正方法，與EBL PEC的物理機制不同。
+    </li>
+  </ol>
+
+
+  <br>
+
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">
+    Reference :<br>
+  </div>
+
+  <ol>
+
+    <li>
+      <a href="https://raith.com/products/voyager/">
+        RAITH - VOYAGER Electron Beam Lithography System
+      </a>
+    </li>
+
+    <li>
+      <a href="https://raith.com/products/multifunctional-ebl/">
+        RAITH - E-Line / EBL Proximity Effect Correction
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.jeol.com/products/science/ebx.php">
+        JEOL - Electron Beam Lithography System
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.jeol.com/s3/en/catalog/productsguide_e_04.pdf">
+        JEOL - Electron Beam Lithography System Product Guide
+      </a>
+    </li>
+
+  </ol>
+
 </div>
+
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 2</span>
-  <!-- <a class="page-number" href="archives/category/HEP/Capstone Project.html">
-  <i class="fa fa-angle-right"></i></a> -->
+    <a href="archives/category/Litho/Introduction.html" style="color: black"><i class="fa fa-angle-left" ></i></a>
+    <a href="archives/category/Litho/PEC.html" style="color: black" > 2 </a>
+    <a href="archives/category/Litho/Project.html" style="color: black"><i class="fa fa-angle-right" ></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->

@@ -117,6 +117,12 @@
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
     </details>
+    <details>
+      <summary>
+        <a class="file" href="archives/category/Linux/Git&GitHub.html">
+          <i class="fa fa-file-lines"></i> Git&GitHub</a>
+      </summary>
+    </details>
   </details>
   <details>
     <summary>
@@ -243,98 +249,194 @@
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
+
   <h1>簡介</h1>
-  <p>SCM（Scanning Conductance Microscopy）是一種掃描探針顯微術，主要用於檢測材料的電導性和表面特性。
-    雖然SCM的具體原理在提供的搜索結果中沒有明確提及，但它與其他掃描探針顯微術（如AFM）有相似的技術基礎。 </p>
+  <p>
+    SCM（Scanning Capacitance Microscopy，掃描電容顯微術）是一種結合掃描探針顯微術與電性量測的技術，
+    主要用於分析半導體材料的電性特性。SCM透過導電探針與樣品表面接觸，
+    量測樣品局部電容及其變化，可用於分析半導體中的載子濃度、摻雜分布及其他電性特徵。
+    此技術常應用於半導體元件、晶圓及各類電子材料的奈米尺度電性分析。
+  </p>
+
   <h1>原理</h1>
-  <p>SCM通常利用一根尖細的探針與樣品表面接觸或近距離掃描，以測量樣品的電導性和表面特性。
-    這種技術可以在奈米尺度上檢測材料的電性變化，尤其適合於檢測導體和半導體材料的表面特性。
-    與AFM相似，SCM也能在不同環境中操作，如真空、氣體或液體環境。然而，SCM的主要目的是測量電導性和電流變化，而非僅僅檢測表面形貌。
-    SCM的應用範圍包括半導體材料的檢測、奈米結構的製造等領域。</p>
+  <p>
+    SCM主要利用導電探針與半導體樣品形成類似金屬－絕緣層－半導體（MOS）的結構，
+    在探針與樣品之間施加偏壓後，會產生對應的電容變化。
+    當半導體表面的載子濃度或摻雜濃度發生變化時，局部電容也會隨之改變。
+    儀器利用高頻訊號量測電容變化，並透過掃描探針在樣品表面進行逐點掃描，
+    進而得到樣品表面的電性分布。
+  </p>
+
+  <p>
+    在SCM量測中，通常會對樣品施加直流偏壓（DC Bias）與交流調制電壓（AC Voltage），
+    再量測因電壓變化所產生的電容變化量（dC/dV）。
+    透過dC/dV訊號可以分析不同區域的摻雜濃度及載子分布。
+    因此SCM除了能取得表面形貌，也能同時提供半導體材料的局部電性資訊。
+  </p>
+
   <h1>SCM操作步驟</h1>
+
   <div class="flowchart">
     <div class="step">裝載SCM模組</div>
     <div class="arrow"></div>
+
     <div class="step">針座裝針</div>
     <div class="arrow"></div>
-    <div class="step">將針座裝置於Burker</div>
+
+    <div class="step">將針座裝置於Bruker</div>
     <div class="arrow"></div>
+
     <div class="step">開啟電腦的量測系統Nanoscope</div>
     <div class="arrow"></div>
-    <div class="step">選擇電性量測</div>
+
+    <div class="step">選擇SCM電性量測模式</div>
     <div class="arrow"></div>
+
     <div class="step">使用雷射對準針頭</div>
     <div class="arrow"></div>
+
     <div class="step">調整針頭的焦距</div>
     <div class="arrow"></div>
-    <div class="step">對準四象限</div>
-    <div class="arrow"></div>
-    <div class="step">放置樣品並使用導航(Navigate)功能尋找樣品邊界</div>
-    <div class="arrow"></div>
-    <div class="step">設定參數</div>
-</div>
-<style>.table-container {
-  text-align: center;
-}
 
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
+    <div class="step">對準四象限光電偵測器</div>
+    <div class="arrow"></div>
 
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}</style>
+    <div class="step">放置樣品並固定樣品</div>
+    <div class="arrow"></div>
+
+    <div class="step">使用導航（Navigate）功能尋找樣品邊界</div>
+    <div class="arrow"></div>
+
+    <div class="step">選擇量測區域</div>
+    <div class="arrow"></div>
+
+    <div class="step">設定SCM量測參數</div>
+    <div class="arrow"></div>
+
+    <div class="step">執行下針（Approach）</div>
+    <div class="arrow"></div>
+
+    <div class="step">確認接觸及電性訊號穩定</div>
+    <div class="arrow"></div>
+
+    <div class="step">加入調制電壓AC並開始掃描</div>
+  </div>
+
+  <style>
+    .table-container {
+      text-align: center;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  </style>
 
   <h1>參數設定表</h1>
+
   <table border="1">
-      <tr>
-          <th>參數</th>
-          <th>設定值</th>
-      </tr>
-      <tr>
-          <td>掃描方向</td>
-          <td>90度</td>
-      </tr>
-      <tr>
-          <td>解析度</td>
-          <td>512x256 px </td>
-      </tr>
-      <tr>
-          <td>下針力道 (Setpoint)</td>
-          <td>0.1V</td>
-      </tr>
-      <tr>
-          <td>頻率</td>
-          <td>100K</td>
-      </tr>
-      <tr>
-          <td>相位</td>
-          <td>-90度</td>
-      </tr>
+    <tr>
+      <th>參數</th>
+      <th>設定值</th>
+    </tr>
+
+    <tr>
+      <td>掃描方向</td>
+      <td>90度</td>
+    </tr>
+
+    <tr>
+      <td>解析度</td>
+      <td>512 × 256 px</td>
+    </tr>
+
+    <tr>
+      <td>下針力道（Setpoint）</td>
+      <td>0.1 V</td>
+    </tr>
+
+    <tr>
+      <td>頻率</td>
+      <td>100 KHz</td>
+    </tr>
+
+    <tr>
+      <td>相位</td>
+      <td>-90度</td>
+    </tr>
+
+    <tr>
+      <td>AC調制電壓</td>
+      <td>下針後加入</td>
+    </tr>
   </table>
-  
-  <p>下針後，需添加調制電壓AC。</p>
 
-<br>
+  <p>
+    下針後，需添加調制電壓AC，以產生電容變化訊號。
+    量測過程中應確認探針與樣品接觸穩定，並觀察SCM訊號是否正常。
+    若訊號不穩定，應重新確認探針接觸狀態及量測參數。
+  </p>  <br>
+<h1>注意事項</h1>
+  <p>
+    1. 安裝探針時應避免碰撞探針尖端，以免造成探針損壞或解析度下降。
+  </p>
 
+  <p>
+    2. 樣品必須固定良好，避免掃描過程中因樣品移動造成影像異常。
+  </p>
 
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+  <p>
+    3. 探針接近樣品表面時應避免速度過快，防止探針與樣品發生強烈碰撞。
+  </p>
+
+  <p>
+    4. 掃描速度過快可能造成回授不足，使影像產生失真，因此應依樣品表面起伏適當調整Scan Rate。
+  </p>
+
+  <p>
+    5. 量測完成後應將探針移離樣品，再關閉相關設備。
+  </p>
+  <br>
+
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">
+    Reference :<br>
+  </div>
+
   <ol>
-    <li><a href="https://en.wikipedia.org/wiki/Scanning_ion-conductance_microscopy">SCM wiki</a></li>
-    <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/table">HTML Table文獻</a></li>
-    </ol>
-                  
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Scanning_capacitance_microscopy">
+        SCM Wiki
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.bruker.com/en/products-and-solutions/microscopes/materials-afm.html">
+        Bruker AFM / SCM相關資料
+      </a>
+    </li>
+
+    <li>
+      <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/table">
+        HTML Table文獻
+      </a>
+    </li>
+  </ol>
+
 </div>
 </div>
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 1</span>
-  <a class="page-number" href="archives/category/SCM/Project.html">
-  <i class="fa fa-angle-right"></i></a>
+    <a href="archives/category/AFM/Introduction.html" style="color: black"><i class="fa fa-angle-left" ></i></a>
+    <a href="archives/category/AFM/SCM.html" style="color: black" > 2 </a>
+    <a href="archives/category/AFM/Thesis.html" style="color: black"><i class="fa fa-angle-right" ></i></a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->

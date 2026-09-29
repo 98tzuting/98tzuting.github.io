@@ -117,6 +117,12 @@
           <i class="fa fa-file-lines"></i> Linux rsync (scp)</a>
       </summary>
     </details>
+    <details>
+      <summary>
+        <a class="file" href="archives/category/Linux/Git&GitHub.html">
+          <i class="fa fa-file-lines"></i> Git&GitHub</a>
+      </summary>
+    </details>
   </details>
   <details>
     <summary>
@@ -222,9 +228,9 @@
 <header class="path">
   <a class="style" href="Home.html"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
   <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >HEP</span>
+    <span class="style" >Litho</span>
     <span class="style"><i class="fa-solid fa-arrow-right"></i></span>
-    <span class="style" >Capstone Project</span>
+    <span class="style" >Project</span>
 </header>
 <div class="content-wrap">
 <!-- 第一篇 文章 -->
@@ -233,50 +239,650 @@
   <article class="post post-type-normal">
     <div class="post-block">
       <header class="post-header">
-            <h1 class="post-title" >Capstone Project</h1>
+            <h1 class="post-title" >Project</h1>
        <div class="post-meta">
                 <i class="fa fa-calendar-o"> : Posted on</i>
               <time title="Post created">
-                2022-09-27
+                2026-03-12
               </time>
         </div>
       </header>
 <!-- 內文 -->
 <div class="post-body" itemprop="articleBody">
-          <p>首先是模擬分析，利用蒙地卡羅方法(Monte Carlo method)去重建(Reconstruction)，這些數據是Mdst.root。<br>
-          先產生大量事件，此事件是我們所需要衰變的分支(DecayTable)，利用官方給的衰變分枝比去寫Python，先假設衰變分之比是100%衰變<br>
-          再利用這些龐大的數據丟去篩選程式(Skimming code)，會產生我們所需要的數據(udst.root)，也是我們想要的原始數據，
-          可能是偵測器的參數調整動能或是粒子的編號(PDG)要正確，還有粒子質量的範圍等等，這些都是可篩選的參數。<br>
-          在經過物理分析後再產生更大集合(Ntuple.root)，因為衰變可能是<strong>幾億分之一</strong>，不產生更大量數據會
-          無法產生我們想要的粒子，這些集合可能跑500億，這些數據不可能在本機完成，一定是利用遠端KEK的超級電腦完成，也就是說要丟程式碼
-          給日本伺服器運行才跑得動。<br>
-          上述都是模擬分析，與實際KEK數據完全無關，這些只能證明說理論上要有這些粒子。<br>
-          但現實中(Nature)中，每天KEK會一直粒子對撞而產生數據，而這些數據要與我們模擬的方式一樣進行，經過同樣的篩選程式(Skimming code)，
-          才會是現實中存在的粒子，這最後步驟我們稱開箱(Open Data)，當然這龐大的數據也是KEK伺服器完成。<br>
-          官方也有許多教程與文獻，大多都需要申請帳號才能查閱，但也很佛心也有公開的 <a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a> 。<br>
-          </p>    
-          <div style="font-size:larger;font-weight:bolder;text-align:center;">下方為前人所做的流程圖片 :<br></div>
-          <img class="text-center" src="images/BelleIIAnalysisModel.svg" alt="Belle II Analysis Models">
-              
-          <br>
-  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">Reference :<br></div>
+
+  <style>
+    .project-header {
+      text-align: center;
+      padding: 30px 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+    }
+
+    .project-header h1 {
+      margin-bottom: 10px;
+    }
+
+    .project-flow,
+    .rework-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    .project-step,
+    .rework-step {
+      width: 165px;
+      min-height: 95px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 2px solid #555;
+      border-radius: 10px;
+      background: #fafafa;
+      box-sizing: border-box;
+    }
+
+    .project-step strong,
+    .rework-step strong {
+      font-size: 17px;
+    }
+
+    .project-arrow,
+    .rework-arrow {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 25px 0;
+    }
+
+    .project-card {
+      flex: 1;
+      min-width: 240px;
+      padding: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f8f8f8;
+      box-sizing: border-box;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    .problem-box {
+      padding: 18px;
+      margin: 25px 0;
+      border-left: 6px solid #555;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+
+    .highlight {
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+    }
+
+    table {
+      width: 90%;
+      margin: 25px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background: #eeeeee;
+    }
+
+    .ebl-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 25px 0;
+    }
+
+    .ebl-step {
+      padding: 15px;
+      min-width: 150px;
+      text-align: center;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background: white;
+    }
+  </style>
+
+
+  <div class="project-header">
+
+    <h1>E-beam Lithography Process Optimization & Rework</h1>
+
+    <p>
+      電子束微影製程最佳化與Rework實作
+    </p>
+
+    <p>
+      以Coating、E-beam Exposure、Develop及Rework為主要研究內容，
+      透過製程條件調整與結果分析，改善光阻圖案品質與製程穩定性。
+    </p>
+
+  </div>
+
+
+  <h1>Project Overview</h1>
+
+  <p>
+    電子束微影（Electron Beam Lithography, EBL）利用聚焦電子束直接在光阻上進行圖案寫入，
+    不需要傳統光學曝光所使用的光罩。
+    電子束曝光後，再透過顯影將光阻圖案形成於基板表面。
+    最終圖案會受到光阻膜厚、電子束劑量、加速電壓、Beam Current、
+    Focus及Develop條件等因素影響。
+  </p>
+
+  <p>
+    本Project主要針對E-beam Lithography中的光阻製程與曝光條件進行最佳化，
+    並建立製程異常發生後的Rework流程。
+    透過不同Recipe的比較，分析Exposure與Develop條件對圖案尺寸及完整性的影響。
+  </p>
+
+
+  <h1>Process Flow</h1>
+
+  <div class="project-flow">
+
+    <div class="project-step">
+      <strong>Coating</strong>
+      <p>光阻塗佈</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="project-step">
+      <strong>Soft Bake</strong>
+      <p>光阻穩定化</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="project-step">
+      <strong>E-beam Exposure</strong>
+      <p>電子束寫入</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="project-step">
+      <strong>Develop</strong>
+      <p>顯影成像</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="project-step">
+      <strong>Inspection</strong>
+      <p>圖案檢查</p>
+    </div>
+
+  </div>
+
+
+  <h1>Coating</h1>
+
+  <p>
+    Coating主要是利用Spin Coating在基板表面形成均勻的光阻膜。
+    Spin Speed、光阻黏度、Spin Time及基板表面狀態都會影響膜厚與均勻度。
+    E-beam Lithography中，光阻厚度也會影響電子束能量在光阻中的沉積及散射，
+    因此需先建立穩定的光阻膜厚，再進行後續曝光。
+  </p>
+
+
+  <h1>E-beam Exposure</h1>
+
+  <p>
+    E-beam Exposure是本Project的主要製程。
+    與光學微影不同，電子束微影利用聚焦電子束直接在光阻表面逐點寫入圖案，
+    電腦根據Layout資料控制電子束的掃描位置與曝光劑量，
+    最後將設計圖案直接轉移至光阻。
+  </p>
+
+  <p>
+    曝光結果主要受到Acceleration Voltage、Beam Current、Exposure Dose、
+    Focus、Step Size及Write Field等參數影響。
+    其中Exposure Dose決定光阻接收到的電子能量，
+    而Beam Current與寫入速度則會影響實際曝光時間與劑量控制。
+  </p>
+
+
+  <h1>E-beam Exposure Process</h1>
+
+  <div class="ebl-flow">
+
+    <div class="ebl-step">
+      <strong>Layout</strong>
+      <p>輸入設計圖形</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="ebl-step">
+      <strong>Data Conversion</strong>
+      <p>建立曝光資料</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="ebl-step">
+      <strong>Focus</strong>
+      <p>確認電子束聚焦</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="ebl-step">
+      <strong>Beam Setup</strong>
+      <p>設定Beam Current</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="ebl-step">
+      <strong>Dose Setup</strong>
+      <p>設定曝光劑量</p>
+    </div>
+
+    <div class="project-arrow">→</div>
+
+    <div class="ebl-step">
+      <strong>Write</strong>
+      <p>電子束直接寫入</p>
+    </div>
+
+  </div>
+
+
+  <h1>E-beam Exposure Parameters</h1>
+
+  <table>
+
+    <tr>
+      <th>參數</th>
+      <th>主要作用</th>
+      <th>影響項目</th>
+    </tr>
+
+    <tr>
+      <td>Acceleration Voltage</td>
+      <td>控制電子束加速能量</td>
+      <td>電子穿透深度與散射行為</td>
+    </tr>
+
+    <tr>
+      <td>Beam Current</td>
+      <td>控制電子束電流</td>
+      <td>寫入速度與曝光劑量</td>
+    </tr>
+
+    <tr>
+      <td>Exposure Dose</td>
+      <td>控制單位面積電子能量</td>
+      <td>CD、Pattern完整性</td>
+    </tr>
+
+    <tr>
+      <td>Focus</td>
+      <td>控制電子束聚焦狀態</td>
+      <td>解析度與Pattern Profile</td>
+    </tr>
+
+    <tr>
+      <td>Step Size</td>
+      <td>控制電子束寫入步距</td>
+      <td>Pattern Resolution與寫入品質</td>
+    </tr>
+
+    <tr>
+      <td>Write Field</td>
+      <td>控制電子束寫入區域</td>
+      <td>寫入效率與圖案位置</td>
+    </tr>
+
+  </table>
+
+
+  <div class="highlight">
+
+    <strong>Exposure Optimization：</strong>
+
+    可透過不同Exposure Dose建立Dose Matrix，
+    比較顯影後的CD、Pattern Profile及圖案完整性。
+    在其他條件固定的情況下，逐步改變曝光劑量，
+    可觀察光阻從曝光不足到過度曝光的圖案變化，
+    並建立適合目前光阻與E-beam設備的曝光條件。
+
+  </div>
+
+
+  <h1>Proximity Effect</h1>
+
+  <p>
+    E-beam曝光時，電子進入光阻及基板後會產生散射，
+    其中包含前向散射（Forward Scattering）與背向散射（Backscattering）。
+    散射電子會在主要電子束曝光區域之外產生額外能量沉積，
+    因此鄰近圖形可能受到額外曝光。
+  </p>
+
+  <p>
+    當圖形密度增加或不同圖形距離縮短時，
+    散射造成的額外曝光可能使實際CD與Design CD產生差異。
+    因此E-beam Lithography通常需要搭配Proximity Effect Correction（PEC），
+    透過局部曝光劑量修正降低鄰近效應造成的圖形偏差。
+  </p>
+
+
+  <h1>Develop</h1>
+
+  <p>
+    Develop將曝光後光阻中的可溶解區域移除，
+    將電子束寫入的潛在圖案轉換成實際光阻結構。
+    顯影時間、Developer條件與沖洗方式會影響最終圖案尺寸及完整性。
+  </p>
+
+  <table>
+
+    <tr>
+      <th>異常</th>
+      <th>可能原因</th>
+      <th>觀察項目</th>
+    </tr>
+
+    <tr>
+      <td>Residual Resist</td>
+      <td>顯影不足</td>
+      <td>Pattern底部殘膠</td>
+    </tr>
+
+    <tr>
+      <td>CD偏差</td>
+      <td>Exposure Dose或Develop條件</td>
+      <td>Critical Dimension</td>
+    </tr>
+
+    <tr>
+      <td>Pattern破損</td>
+      <td>顯影過度或附著性不足</td>
+      <td>Pattern完整性</td>
+    </tr>
+
+  </table>
+
+
+  <h1>Photoresist Rework</h1>
+
+  <p>
+    Rework是製程異常發生後的重新處理流程。
+    當Coating、Exposure或Develop結果不符合要求時，
+    若基板上的既有材料與結構仍適合重新處理，
+    可以先移除原有光阻，再重新進行光阻製程。
+  </p>
+
+  <p>
+    光阻能否順利Removal與其製程歷史有關。
+    未交聯或未經嚴重熱處理的光阻通常較容易使用適當的Stripper移除；
+    經過高溫、乾蝕刻、電漿或其他可能造成交聯的處理後，
+    光阻溶解性可能下降，使Strip變得更加困難。
+  </p>
+
+
+  <h1>Rework Flow</h1>
+
+  <div class="rework-flow">
+
+    <div class="rework-step">
+      <strong>① Inspection</strong>
+      <p>確認異常位置</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>② Failure Analysis</strong>
+      <p>判斷異常原因</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>③ Resist Removal</strong>
+      <p>移除原有光阻</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>④ Cleaning</strong>
+      <p>清除殘留物</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑤ Surface Preparation</strong>
+      <p>重新處理基板表面</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑥ Re-Coating</strong>
+      <p>重新塗佈光阻</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑦ Soft Bake</strong>
+      <p>重新烘烤</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑧ E-beam Exposure</strong>
+      <p>重新電子束寫入</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑨ Develop</strong>
+      <p>重新顯影</p>
+    </div>
+
+    <div class="rework-arrow">→</div>
+
+    <div class="rework-step">
+      <strong>⑩ Inspection</strong>
+      <p>確認Rework結果</p>
+    </div>
+
+  </div>
+
+
+  <h1>Rework判斷</h1>
+
+  <table>
+
+    <tr>
+      <th>異常階段</th>
+      <th>常見問題</th>
+      <th>處理方向</th>
+    </tr>
+
+    <tr>
+      <td>Coating</td>
+      <td>膜厚不均、氣泡、顆粒</td>
+      <td>Removal → Cleaning → Re-Coating</td>
+    </tr>
+
+    <tr>
+      <td>E-beam Exposure</td>
+      <td>Dose錯誤、Focus異常、Pattern寫入問題</td>
+      <td>重新確認曝光條件</td>
+    </tr>
+
+    <tr>
+      <td>Develop</td>
+      <td>殘膠、CD異常、Pattern缺陷</td>
+      <td>分析原因後決定是否Rework</td>
+    </tr>
+
+  </table>
+
+
+  <h1>Rework的重要性</h1>
+
+  <p>
+    Rework除了可以降低基板報廢率，也可以作為製程異常分析的一部分。
+    透過記錄第一次製程的問題、Removal結果及重新製程後的Pattern，
+    可以建立異常與製程參數之間的關聯。
+  </p>
+
+  <p>
+    例如E-beam Exposure後若發現CD偏大，
+    可以先確認Exposure Dose與PEC條件，而不是直接進行Rework。
+    若確認無法透過後續製程修正，才進一步判斷是否需要Strip並重新製程。
+  </p>
+
+
+  <h1>Process Optimization</h1>
+
+  <div class="project-cards">
+
+    <div class="project-card">
+      <h3>Baseline</h3>
+      <p>
+        建立基準Recipe，確認光阻膜厚、曝光與顯影結果。
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Dose Matrix</h3>
+      <p>
+        改變E-beam Exposure Dose，
+        比較不同條件下的CD與Pattern Profile。
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Develop Optimization</h3>
+      <p>
+        調整Develop條件，
+        觀察殘膠與圖案完整性。
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Rework Verification</h3>
+      <p>
+        重新製程後比較Pattern結果，
+        確認Rework是否恢復至可接受狀態。
+      </p>
+    </div>
+
+  </div>
+
+
+  <h1>Evaluation</h1>
+
+  <p>
+    製程最佳化可透過CD、Pattern Profile、光阻膜厚、
+    Pattern完整性及缺陷狀況進行評估。
+    E-beam Exposure部分則可利用Dose Matrix觀察曝光劑量與圖案尺寸之間的關係，
+    並配合PEC降低不同Pattern Density所造成的尺寸差異。
+  </p>
+
+
+  <h1>Conclusion</h1>
+
+  <p>
+    本Project以E-beam Lithography為核心，
+    從Coating、E-beam Exposure到Develop建立完整的光阻製程。
+    其中Exposure條件會直接影響電子束寫入後的圖案尺寸，
+    而Proximity Effect則會受到前向散射與背向散射影響，
+    因此需要透過PEC進行劑量補償。
+  </p>
+
+  <p>
+    當製程出現異常時，先透過Inspection與Failure Analysis確認問題來源，
+    再依照基板及材料狀態進行Resist Removal、Cleaning與Re-Coating，
+    最後重新進行E-beam Exposure及Develop。
+    透過這套Rework流程，可以同時作為製程恢復與異常分析的方法。
+  </p>
+
+
+  <br>
+
+  <div style="font-size:larger;font-weight:bolder;text-align:center;word-break:break-all;">
+    Reference :<br>
+  </div>
+
   <ol>
-    <li><a href="
-      https://indico.fnal.gov/event/23628/contributions/241330/attachments/154947/201676/BelleIIAnalysisModel.pdf ">
-      Belle II Analysis Models  </a></li>
-    <li><a href="https://software.belle2.org/development/sphinx/index.html">Belle II Software Documentation</a></li>
-    <li><a href="https://www.belle2.org/">https://belle.kek.jp/</a></li>
-    </ol>
-                  
+
+    <li>
+      <a href="https://raith.com/products/voyager/">
+        RAITH - Electron Beam Lithography
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.microchemicals.com/dokumente/application_notes/photoresist_removal.pdf">
+        MicroChemicals - Photoresist Removal
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.microchemicals.com/dokumente/application_notes/photoresist_hardbake_reflow_uv_hardening.pdf">
+        MicroChemicals - Hardbake, Reflow and UV Hardening
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.jeol.com/products/science/ebx.php">
+        JEOL - Electron Beam Lithography
+      </a>
+    </li>
+
+  </ol>
+
 </div>
-</div>
+
 </div></div>
 </article></section>
 <!-- 最下面的頁數 -->
 <nav class="pagination">
-  <span class="page-number"><i class="fa-solid fa-door-open"></i> 2</span>
-  <!-- <a class="page-number" href="archives/category/HEP/Capstone Project.html">
-  <i class="fa fa-angle-right"></i></a> -->
+    <a href="archives/category/Litho/PEC.html" style="color: black"><i class="fa fa-angle-left" ></i></a>
+    <a href="archives/category/Litho/Project.html" style="color: black" > 3 </a>
 </nav>
 </main></div>
 <!-- 最下方的描述 -->
